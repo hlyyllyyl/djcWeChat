@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TColumnMapper">
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />,
+    <include refid="parentColumn" />
+    from t_column c
+    LEFT JOIN t_column p ON c.parent_id = p.id
+    where c.id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_column
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TColumn">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_column (name, url, check_img_path,
+    img_path, parent_id, audit_id,
+    template_name, name_remark, rank,
+    is_top)
+    values (#{name,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{checkImgPath,jdbcType=VARCHAR},
+    #{imgPath,jdbcType=VARCHAR}, #{parentId,jdbcType=BIGINT}, #{auditId,jdbcType=BIGINT},
+    #{templateName,jdbcType=VARCHAR}, #{nameRemark,jdbcType=VARCHAR}, #{rank,jdbcType=INTEGER},
+    #{isTop,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TColumn">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_column
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        name,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="checkImgPath != null">
+        check_img_path,
+      </if>
+      <if test="imgPath != null">
+        img_path,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="auditId != null">
+        audit_id,
+      </if>
+      <if test="templateName != null">
+        template_name,
+      </if>
+      <if test="nameRemark != null">
+        name_remark,
+      </if>
+      <if test="rank != null">
+        rank,
+      </if>
+      <if test="isTop != null">
+        is_top,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="checkImgPath != null">
+        #{checkImgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="imgPath != null">
+        #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="auditId != null">
+        #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="templateName != null">
+        #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameRemark != null">
+        #{nameRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="rank != null">
+        #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null">
+        #{isTop,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TColumn">
+    update t_column
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="checkImgPath != null">
+        check_img_path = #{checkImgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="imgPath != null">
+        img_path = #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="auditId != null">
+        audit_id = #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="templateName != null">
+        template_name = #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="nameRemark != null">
+        name_remark = #{nameRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="rank != null">
+        rank = #{rank,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null">
+        is_top = #{isTop,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TColumn">
+    update t_column
+    set name = #{name,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      check_img_path = #{checkImgPath,jdbcType=VARCHAR},
+      img_path = #{imgPath,jdbcType=VARCHAR},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      audit_id = #{auditId,jdbcType=BIGINT},
+      template_name = #{templateName,jdbcType=VARCHAR},
+      name_remark = #{nameRemark,jdbcType=VARCHAR},
+      rank = #{rank,jdbcType=INTEGER},
+      is_top = #{isTop,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TColumn">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="check_img_path" jdbcType="VARCHAR" property="checkImgPath" />
+    <result column="img_path" jdbcType="VARCHAR" property="imgPath" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="audit_id" jdbcType="BIGINT" property="auditId" />
+    <result column="template_name" jdbcType="VARCHAR" property="templateName" />
+    <result column="name_remark" jdbcType="VARCHAR" property="nameRemark" />
+    <result column="rank" jdbcType="INTEGER" property="rank" />
+    <result column="is_top" jdbcType="INTEGER" property="isTop" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TColumn" property="parentColumn">
+      <id column="pId" property="id" />
+      <result column="pName" property="name" />
+      <result column="pImgPath" property="imgPath" />
+      <result column="pCheckImgPath" property="checkImgPath" />
+      <result column="pUrl" property="url" />
+      <result column="pAuditId" property="auditId" />
+      <result column="pTemplateName" property="templateName" />
+      <result column="Prank" property="rank" />
+      <result column="pIsTop" property="isTop" />
+    </association>
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="auditMan">
+      <id column="auditManId" property="id" />
+      <result column="auditManName" property="realName" />
+    </association>
+  </resultMap>
+
+  <resultMap id="ColumnMap" type="com.decisioncustom.domain.TColumn">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="check_img_path" jdbcType="VARCHAR" property="checkImgPath" />
+    <result column="img_path" jdbcType="VARCHAR" property="imgPath" />
+    <result column="parent_id" jdbcType="BIGINT" property="parentId" />
+    <result column="audit_id" jdbcType="BIGINT" property="auditId" />
+    <result column="template_name" jdbcType="VARCHAR" property="templateName" />
+    <result column="name_remark" jdbcType="VARCHAR" property="nameRemark" />
+    <result column="rank" jdbcType="INTEGER" property="rank" />
+    <result column="is_top" jdbcType="INTEGER" property="isTop" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    c.id, c.name, c.url, c.img_path,c.check_img_path, c.parent_id, c.audit_id, c.template_name, c.rank, c.is_top,c.name_remark
+  </sql>
+  <sql id="parentColumn">
+    p.name pName, p.img_path pImgPath,p.url pUrl,p.audit_id pAuditId, p.template_name pTemplateName, p.rank Prank, p.is_top pIsTop
+  </sql>
+  <select id="selectAll"  resultMap="BaseResultMap">
+    select auditMan.real_name auditManName,
+    <include refid="Base_Column_List" />,
+    <include refid="parentColumn" />
+    from t_column c
+    LEFT JOIN t_column p ON c.parent_id = p.id
+    LEFT JOIN t_employee auditMan ON c.audit_id = auditMan.id
+  </select>
+
+  <select id="selectParentColumn" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_column c
+    where c.parent_id IS null
+    ORDER BY  c.is_top DESC ,c.rank
+  </select>
+
+  <select id="selectChildrenColumn"  parameterType="java.lang.Long"  resultMap="ColumnMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_column c
+    where c.parent_id = #{parentId,jdbcType=BIGINT}
+    ORDER BY  c.is_top DESC ,c.rank
+  </select>
+
+  <select id="selectTopColumn"  parameterType="java.lang.Long"  resultMap="ColumnMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_column c
+    where c.is_top = 1 and c.parent_id = #{parentId,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectTopColumnByName"  parameterType="java.lang.String"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />,
+    <include refid="parentColumn" />
+    from t_column c
+    LEFT JOIN t_column p ON c.parent_id = p.id
+    where c.is_top = 1 and p.name = #{columnName,jdbcType=BIGINT}
+  </select>
+
+</mapper>

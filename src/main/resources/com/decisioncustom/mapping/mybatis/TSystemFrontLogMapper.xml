@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.decisioncustom.mapper.TSystemFrontLogMapper" >
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TSystemFrontLog" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="open_user" property="openUser" jdbcType="VARCHAR" />
+    <result column="open_date" property="openDate" jdbcType="TIMESTAMP" />
+    <result column="open_ip" property="openIp" jdbcType="VARCHAR" />
+    <result column="function" property="function" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.decisioncustom.domain.TSystemFrontLog" extends="BaseResultMap" >
+    <result column="parameter" property="parameter" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, open_user, open_date, open_ip, function
+  </sql>
+  <sql id="Blob_Column_List" >
+    parameter
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_system_front_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_system_front_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TSystemFrontLog" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_system_front_log (open_user, open_date, open_ip,
+      function, parameter)
+    values (#{openUser,jdbcType=VARCHAR}, #{openDate,jdbcType=TIMESTAMP}, #{openIp,jdbcType=VARCHAR},
+      #{function,jdbcType=VARCHAR}, #{parameter,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TSystemFrontLog" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_system_front_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="openUser != null" >
+        open_user,
+      </if>
+      <if test="openDate != null" >
+        open_date,
+      </if>
+      <if test="openIp != null" >
+        open_ip,
+      </if>
+      <if test="function != null" >
+        function,
+      </if>
+      <if test="parameter != null" >
+        parameter,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="openUser != null" >
+        #{openUser,jdbcType=VARCHAR},
+      </if>
+      <if test="openDate != null" >
+        #{openDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="openIp != null" >
+        #{openIp,jdbcType=VARCHAR},
+      </if>
+      <if test="function != null" >
+        #{function,jdbcType=VARCHAR},
+      </if>
+      <if test="parameter != null" >
+        #{parameter,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TSystemFrontLog" >
+    update t_system_front_log
+    <set >
+      <if test="openUser != null" >
+        open_user = #{openUser,jdbcType=VARCHAR},
+      </if>
+      <if test="openDate != null" >
+        open_date = #{openDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="openIp != null" >
+        open_ip = #{openIp,jdbcType=VARCHAR},
+      </if>
+      <if test="function != null" >
+        function = #{function,jdbcType=VARCHAR},
+      </if>
+      <if test="parameter != null" >
+        parameter = #{parameter,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.decisioncustom.domain.TSystemFrontLog" >
+    update t_system_front_log
+    set open_user = #{openUser,jdbcType=VARCHAR},
+      open_date = #{openDate,jdbcType=TIMESTAMP},
+      open_ip = #{openIp,jdbcType=VARCHAR},
+      function = #{function,jdbcType=VARCHAR},
+      parameter = #{parameter,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TSystemFrontLog" >
+    update t_system_front_log
+    set open_user = #{openUser,jdbcType=VARCHAR},
+      open_date = #{openDate,jdbcType=TIMESTAMP},
+      open_ip = #{openIp,jdbcType=VARCHAR},
+      function = #{function,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="selectAll" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_system_front_log
+  </select>
+
+</mapper>

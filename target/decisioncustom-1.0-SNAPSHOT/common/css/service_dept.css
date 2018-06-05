@@ -1,0 +1,31 @@
+#container .table th{
+    text-align: center;
+    word-break: keep-all;
+    vertical-align: middle;
+}
+
+.customerAll{
+    background-color:#fda594;
+    font-weight: bold;
+}
+
+#container .table td{
+    text-align: center;
+    color: black;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+#container .table{
+    text-align: center;
+    font-size: 12px;
+}
+#container .table tbody{
+    word-break: keep-all;
+}
+#container .table thead{
+    background-color: peachpuff;
+}
+.form-control{
+    height: 30px;
+}

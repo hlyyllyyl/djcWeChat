@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dajuece.mapper.TIntelligenceAgenciesMapper">
+  <resultMap id="BaseResultMap" type="com.dajuece.domain.TIntelligenceAgencies">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="intelligence_title" jdbcType="VARCHAR" property="intelligenceTitle" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="img_id" jdbcType="BIGINT" property="imgId" />
+    <result column="reading_quantity" jdbcType="BIGINT" property="readingQuantity" />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="text_id" jdbcType="BIGINT" property="textId" />
+  </resultMap>
+  <resultMap id="employeeMap" type="com.dajuece.domain.TIntelligenceAgencies" extends="BaseResultMap" >
+    <!--关联属性-->
+    <association property="employee" javaType="com.dajuece.domain.Employee">
+      <id property="id" column="employeeId"/>
+      <result property="username" column="employeeName"/>
+      <result property="realname" column="realName"/>
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    t_intelligence_agencies.id, teacher_id, intelligence_title, creation_time, update_time, img_id, reading_quantity,
+    top, text_id
+  </sql>
+  <sql id="employee" >
+    e.username employeeName,e.id  employeeId,e.team,e.department,e.realname realName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_intelligence_agencies
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="getIntelligenceAgenciesText" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_intelligence_agencies
+    where text_id = #{textId,jdbcType=BIGINT}
+  </select>
+  <!--查询所有的机构情报-->
+  <select id="getAllintelligenceAgencies" resultMap="employeeMap">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="employee" />
+    from t_intelligence_agencies
+    LEFT JOIN t_employee e ON t_intelligence_agencies.teacher_id = e.id
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_intelligence_agencies
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.dajuece.domain.TIntelligenceAgencies">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_intelligence_agencies (teacher_id, intelligence_title, creation_time, 
+      update_time, img_id, reading_quantity, 
+      top, text_id)
+    values (#{teacherId,jdbcType=BIGINT}, #{intelligenceTitle,jdbcType=VARCHAR}, #{creationTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{imgId,jdbcType=BIGINT}, #{readingQuantity,jdbcType=BIGINT}, 
+      #{top,jdbcType=INTEGER}, #{textId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dajuece.domain.TIntelligenceAgencies">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_intelligence_agencies
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="intelligenceTitle != null">
+        intelligence_title,
+      </if>
+      <if test="creationTime != null">
+        creation_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="imgId != null">
+        img_id,
+      </if>
+      <if test="readingQuantity != null">
+        reading_quantity,
+      </if>
+      <if test="top != null">
+        top,
+      </if>
+      <if test="textId != null">
+        text_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="intelligenceTitle != null">
+        #{intelligenceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imgId != null">
+        #{imgId,jdbcType=BIGINT},
+      </if>
+      <if test="readingQuantity != null">
+        #{readingQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        #{top,jdbcType=INTEGER},
+      </if>
+      <if test="textId != null">
+        #{textId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dajuece.domain.TIntelligenceAgencies">
+    update t_intelligence_agencies
+    <set>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="intelligenceTitle != null">
+        intelligence_title = #{intelligenceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="imgId != null">
+        img_id = #{imgId,jdbcType=BIGINT},
+      </if>
+      <if test="readingQuantity != null">
+        reading_quantity = #{readingQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        top = #{top,jdbcType=INTEGER},
+      </if>
+      <if test="textId != null">
+        text_id = #{textId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dajuece.domain.TIntelligenceAgencies">
+    update t_intelligence_agencies
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      intelligence_title = #{intelligenceTitle,jdbcType=VARCHAR},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      img_id = #{imgId,jdbcType=BIGINT},
+      reading_quantity = #{readingQuantity,jdbcType=BIGINT},
+      top = #{top,jdbcType=INTEGER},
+      text_id = #{textId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

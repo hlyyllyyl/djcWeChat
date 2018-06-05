@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.decisioncustom.mapper.TOperationLogMapper" >
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TOperationLog" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="teacher_id" property="teacherId" jdbcType="BIGINT" />
+    <result column="creation_time" property="creationTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="adviser">
+      <id column="employeeId" property="id" />
+      <result column="employeeName" property="userName" />
+      <result column="realName" property="realName" />
+    </association>
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.decisioncustom.domain.TOperationLog" extends="BaseResultMap" >
+    <result column="log_details" property="logDetails" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    t_operation_log.id, teacher_id, creation_time, update_time update_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    log_details
+  </sql>
+  <sql id="employee">
+    e.user_name employeeName,e.id  employeeId,e.real_name realName
+  </sql>
+  <sql id="whereSql">
+    <where>
+      <if test="q!=null and q!=''">
+        and  log_details like concat('%',#{q},'%')
+      </if>
+      <if test="teacherName!=null and teacherName!=''">
+        and  e.real_name like concat('%',#{teacherName},'%')
+      </if>
+      <if test="startTime!=null and startTime!=''">
+        and update_time>=#{startTime}
+      </if>
+      <if test="endTime!=null and endTime!=''">
+        and not update_time >= #{endTime}
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_operation_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByQuery" resultMap="ResultMapWithBLOBs" parameterType="com.decisioncustom.query.OperationLogQuery" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,
+    <include refid="employee" />
+    from t_operation_log
+    LEFT JOIN t_employee e ON t_operation_log.teacher_id = e.id
+    <include refid="whereSql" />
+    order by update_time DESC
+  </select>
+  <select id="selectAll" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    ,
+    <include refid="employee" />
+    from t_operation_log
+    LEFT JOIN t_employee e ON t_operation_log.teacher_id = e.id
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_operation_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TOperationLog" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_operation_log (teacher_id, creation_time, update_time, 
+      log_details)
+    values (#{teacherId,jdbcType=BIGINT}, #{creationTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{logDetails,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TOperationLog" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_operation_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="teacherId != null" >
+        teacher_id,
+      </if>
+      <if test="creationTime != null" >
+        creation_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="logDetails != null" >
+        log_details,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="teacherId != null" >
+        #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="creationTime != null" >
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logDetails != null" >
+        #{logDetails,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TOperationLog" >
+    update t_operation_log
+    <set >
+      <if test="teacherId != null" >
+        teacher_id = #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="creationTime != null" >
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logDetails != null" >
+        log_details = #{logDetails,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.decisioncustom.domain.TOperationLog" >
+    update t_operation_log
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      log_details = #{logDetails,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TOperationLog" >
+    update t_operation_log
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

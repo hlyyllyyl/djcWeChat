@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- 配置核心组件sampleManager -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!-- 自己配置一个类来实现数据交互 -->
+        <property name="realm" ref="crmRealm"/>
+    </bean>
+
+    <!-- 配置crmRealm这个类 -->
+    <bean id="crmRealm" class="com.decisioncustom.shiro.realms.CrmRealm">
+        <!-- realm默认的匹配就是简单匹配，要加密比对需要配置 -->
+        <property name="credentialsMatcher">
+            <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+                <!-- 加密方式 -->
+                <property name="hashAlgorithmName" value="MD5" />
+                <!-- 加密次数 -->
+                <property name="hashIterations" value="1000" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!-- 引用securityManager -->
+        <property name="securityManager" ref="securityManager"/>
+        <!-- 登录页面，没有登录就进入的页面 -->
+        <property name="loginUrl" value="/index"/>
+        <!-- 登录成功后进入的页面 ,就是后天的主页面-->
+        <property name="successUrl" value="/column/main/藏金"/>
+        <!-- 没有权限进入的页面 -->
+        <property name="unauthorizedUrl" value="/unauthorized.jsp"/>
+        <!--  这个样子太多了，写不完，我们需要在数据库中查询
+                <property name="filterChainDefinitions">
+                    <value>
+                        #这两个资源不需要登录
+                        /login.jsp = anon
+                        /login = anon
+                        #对需要权限才能访问的资源地址配置拦截，只要不再这儿配置都任务不需要任何权限，直接放行
+                        /authorized.html = perms[user:*]
+                        #其他资源都需登录
+                        /** = authc
+                    </value>
+                </property>
+        -->
+
+        <!-- 自定义权限过滤器 -->
+        <property name="filters">
+            <map>
+                <!-- 申明配置需要的class和权限标识符，注解注入类 -->
+                <entry key="crmPerms" value-ref="moonCrmPermissionsAuthorizationFilter" />
+            </map>
+        </property>
+
+        <!-- 配置的权限想外面引用 -->
+        <property name="filterChainDefinitionMap" ref="filterChainDefinitionMap"/>
+
+
+    </bean>
+
+
+    <!-- 配置一个bean，用来注入自定义的权限拦截器 -->
+    <bean id="moonCrmPermissionsAuthorizationFilter" class="com.decisioncustom.shiro.realms.MoonCrmPermissionsAuthorizationFilter"></bean>
+
+
+
+    <!-- 配置创建map的bean -->
+    <bean id="filterChainDefinitionMapFactoryBean"
+          class="com.decisioncustom.shiro.realms.FilterChainDefinitionMapFactoryBean"></bean>
+
+
+    <!-- 调用factoryBean的方法，把返回值当做一个bean -->
+    <bean id="filterChainDefinitionMap" factory-bean="filterChainDefinitionMapFactoryBean"
+          factory-method="createFilterChainDefinitionMap"></bean>
+</beans>

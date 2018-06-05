@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="MySQLTables" targetRuntime="MyBatis3" defaultModelType="flat">
+
+        <!-- 指定生成的java文件的编码,没有直接生成到项目时中文可能会乱码 -->
+        <property name="javaFileEncoding" value="UTF-8" />
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql:///djc" userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.decisioncustom.domain"
+                            targetProject="src/main/java">
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mybatis"
+                         targetProject="src/main/resources/com/decisioncustom/dozer">
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.decisioncustom.mapper"
+                             targetProject="src/gen/unused">
+        </javaClientGenerator>
+
+
+
+      <!--<table tableName="t_article" domainObjectName="TArticle"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" identity="true" sqlStatement="SELECT LAST_INSERT_ID()"/>
+        </table>-->
+        <table tableName="t_user" domainObjectName="TUserVO"/>
+
+        <!--<table tableName="t_customer_column" domainObjectName="TCustomerColumn"
+              enableCountByExample="false"
+              enableUpdateByExample="false"
+              enableDeleteByExample="false"
+              enableSelectByExample="false"
+              selectByExampleQueryId="false">
+           <generatedKey column="id" identity="true" sqlStatement="SELECT LAST_INSERT_ID()"/>
+       </table>-->
+
+    </context>
+</generatorConfiguration>

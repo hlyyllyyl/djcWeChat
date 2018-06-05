@@ -1,0 +1,1698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="DecisionCustom:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/UserController.java" line="28" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/IntelligenceAgenciesController.java" line="28" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2b16e633-2768-4946-9af0-e15694f1c88e" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="djcWeChat" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="list_query_medium_column.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_query_medium_column.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="220" column="38" lean-forward="false" selection-start-line="220" selection-start-column="38" selection-end-line="220" selection-end-column="38" />
+              <folding>
+                <marker date="1528184049915" expanded="true" signature="8674:8704" ph="..." />
+                <marker date="1528184049915" expanded="true" signature="8770:8858" ph="..." />
+                <marker date="1528184049915" expanded="true" signature="8931:9008" ph="..." />
+                <marker date="1528184049915" expanded="true" signature="9088:9178" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TArticleMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/com/decisioncustom/mapping/mybatis/TArticleMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="468" column="11" lean-forward="false" selection-start-line="468" selection-start-column="11" selection-end-line="468" selection-end-column="11" />
+              <folding>
+                <element signature="n#delete#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#insert#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#insert#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#update#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#update#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#resultMap#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#resultMap#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#collection#0;n#resultMap#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#resultMap#2;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#resultMap#3;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#sql#0;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#sql#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#sql#2;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#sql#3;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#1;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#3;n#mapper#0;n#!!top" expanded="false" />
+                <element signature="n#select#4;n#mapper#0;n#!!top" expanded="false" />
+                <marker date="1528185145000" expanded="true" signature="281:339" ph="delete from " />
+                <marker date="1528185145000" expanded="true" signature="5704:8065" ph="update t_art... " />
+                <marker date="1528185145000" expanded="true" signature="8168:9363" ph="update t_art... " />
+                <marker date="1528185145000" expanded="true" signature="9475:9656" ph="select t.nam... t_article" />
+                <marker date="1528185145000" expanded="true" signature="19595:19834" ph="select t.rea... t_article" />
+                <marker date="1528185145000" expanded="true" signature="19966:20322" ph="select , fro... " />
+                <marker date="1528185145000" expanded="true" signature="20102:20147" ph="/*LEFT JOIN " />
+                <marker date="1528185145000" expanded="true" signature="20469:20656" ph="select t.rea... t_article" />
+                <marker date="1528185145000" expanded="true" signature="20784:20953" ph="select from t_article" />
+                <marker date="1528185145000" expanded="true" signature="21076:21440" ph="select c.nam... t_article" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_small_article.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_small_article.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+              <folding>
+                <marker date="1528187977050" expanded="true" signature="12746:12776" ph="..." />
+                <marker date="1528187977050" expanded="true" signature="12842:12930" ph="..." />
+                <marker date="1528187977050" expanded="true" signature="13003:13080" ph="..." />
+                <marker date="1528187977050" expanded="true" signature="13160:13250" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list_big_article.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_big_article.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3213">
+              <caret line="189" column="23" lean-forward="false" selection-start-line="189" selection-start-column="23" selection-end-line="189" selection-end-column="23" />
+              <folding>
+                <marker date="1528111529589" expanded="true" signature="9920:9950" ph="..." />
+                <marker date="1528111529589" expanded="true" signature="10016:10104" ph="..." />
+                <marker date="1528111529589" expanded="true" signature="10177:10254" ph="..." />
+                <marker date="1528111529589" expanded="true" signature="10334:10424" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Enum" />
+        <option value="BpmnFile" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="FxmlFile" />
+        <option value="spring-beans.schema" />
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>lists</find>
+      <find>Encrypt</find>
+      <find>SAXReade</find>
+      <find>dom4j</find>
+      <find>a.</find>
+      <find>chi</find>
+      <find>children_List</find>
+      <find>risk_disclosure</find>
+      <find>async:</find>
+      <find>pinchzoom</find>
+      <find>id=&quot;wrapper&quot;</find>
+      <find>for (i=0; i&lt;result.data.length; i++)</find>
+      <find>if\(result\.data\.length\=\=0\)\{\n                            li \= document\.createElement\(\'li\'\)\;\n                            if\(\$\(\&quot;\#bottom\&quot;\)\.length\&lt;\=0\)\{\n                                li\.setAttribute\(\&quot;id\&quot;\,\&quot;bottom\&quot;\)\;\n                                li\.innerHTML \=\&quot;已经到底了\！\&quot;\;\n                                el\.appendChild\(li\, el\.childNodes\[0\]\)\;\n                                return\;\n                            \}\n                        \}</find>
+      <find>console.log(result.data)</find>
+      <find>result.dat</find>
+      <find>滚动翻页</find>
+      <find>&quot;已经到底了！&quot;</find>
+      <find>data[i]</find>
+      <find>data.length</find>
+      <find>articleList</find>
+      <find>inpt</find>
+      <find>WeixinAuthFilter</find>
+      <find>columnI</find>
+      <find>Teacher_Column_List</find>
+      <find>console.log</find>
+      <find>`</find>
+      <find>/v/article</find>
+      <find>spinner</find>
+      <find>ByQuery</find>
+      <find>getArticleByQuery</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>/assets/picture/</replace>
+      <replace>/assets/</replace>
+      <replace>/assets/css/</replace>
+      <replace>decisioncustom</replace>
+      <replace>Id</replace>
+      <replace>customer_id</replace>
+      <replace>customerId</replace>
+      <replace>SystemMenu</replace>
+      <replace>goUrl</replace>
+      <replace>BaseResultMap</replace>
+      <replace>, a.</replace>
+      <replace>/imgs/</replace>
+      <replace>, c.</replace>
+      <replace>915101067130530143</replace>
+      <replace>http://192.168.10.49:8080/</replace>
+      <replace>192.168.10.49</replace>
+      <replace>&lt;a class=&quot; mui-icon1 mui-icon-left-nav mui-pull-left1&quot;       href=&quot;javascript:;&quot; onClick=&quot;javascript:history.back(-1);&quot;&gt;返回&lt;/a&gt;</replace>
+      <replace>item</replace>
+      <replace>t_system_front_log</replace>
+      <replace>TSystemFrontLog</replace>
+      <replace>video</replace>
+      <replace>thumbnailPath</replace>
+      <replace>b.</replace>
+      <replace>\'\&lt;div style\=\&quot;width\:100\%\;text\-align\: center\;\&quot;\&gt;\\n\' \+\n                                    \'        \&lt;span style\=\&quot;height\:1px\;background\: \#999\;margin\:2px\;width\:30\%\;text\-align\: left\;display\: inline\-block\;\&quot;\&gt;\&lt;\/span\&gt;\\n\' \+\n                                    \'        \&lt;span style\=\&quot;width\:30\%\;color\:\#999\;font\-size\:12px\;text\-align\: center\;display\: inline\-block\;\&quot;\&gt;我也是有底线的\&lt;\/span\&gt;\\n\' \+\n                                    \'        \&lt;span style\=\&quot;height\:1px\;background\: \#999\;\;margin\:2px\;width\:30\%\;text\-align\: right\;display\: inline\-block\;\&quot;\&gt;\&lt;\/span\&gt;\\n\' \+\n                                    \'    \&lt;\/div\&gt;\'</replace>
+      <replace>data.articleList[i]</replace>
+      <replace>data.articleList.length</replace>
+      <replace>videoList</replace>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>D:\djcWeChat</dir>
+      <dir>D:\djcWeChat\src\main\webapp\WEB-INF</dir>
+      <dir>D:\djcWeChat\src\main\java\com\decisioncustom\wexin</dir>
+      <dir>D:\djcWeChat\src\main\webapp</dir>
+      <dir>D:\djcWeChat\src\main\webapp\WEB-INF\views</dir>
+      <dir>D:\djcWeChat\src\main</dir>
+      <dir>D:\djcWeChat\src\main\webapp\WEB-INF\views\article</dir>
+      <dir>D:\djcWeChat\src\main\java\com\decisioncustom</dir>
+      <dir>D:\djcWeChat\src</dir>
+      <dir>D:\djcWeChat\src\main\java</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/video.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_small_article_bac.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/service/IColumnService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/service/impl/ColumnServiceImpl.java" />
+        <option value="D:/JavaTools/apache-tomcat-8.0.41/webapps/djc/WEB-INF/views/column/main-column.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/index.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/web/filter/GzipFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/web/filter/WeixinAuthFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/decisioncustom/mapping/mybatis/SystemMenuMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/main/big_list.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/list_big_video.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_text_article.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_medium_article.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/video/list_small_video.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/TArticle.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/utils/myBatis/EmptyStringIfNull.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/configuration.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/dataSource.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/mybatis-configuration.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/generateConfig.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/TArticleVO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-dozer.fxml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/spring-dozer.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/mapper/TArticleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/service/IArticleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/service/impl/ArticleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/ArticleVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/VideoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/pullDown.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_big_article.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/column/main-column.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/notColumn.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/notTime.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/risk.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/column/ColumnController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/common/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/article.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/jsp/articleInfo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/shiro/realms/FilterChainDefinitionMapFactoryBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/EmployeeVO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/VideoInfoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/dozer/dozer-mapping.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/video/VideoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/article/ArticleController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/ArticleInfoVO.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_query_medium_column.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/decisioncustom/mapping/mybatis/TArticleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_small_article.jsp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\JavaTools\maven\.m2\repository" />
+        <option name="mavenHome" value="D:/JavaTools/maven/apache-maven-3.2.5" />
+        <option name="userSettingsFile" value="D:\JavaTools\maven\.m2\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="createModuleGroups" value="true" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="decision_custom" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="decision_custom" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1438" />
+    <option name="height" value="852" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="djcWeChat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="djcWeChat" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.4269275" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\djcWeChat\src\main\webapp\css\main" />
+      <recent name="D:\djcWeChat\src\main\webapp" />
+      <recent name="D:\djcWeChat\src\main\webapp\WEB-INF\views\common" />
+      <recent name="D:\djcWeChat\src\main\webapp\imgs" />
+      <recent name="D:\djcWeChat\src\main\webapp\css" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.jueche" />
+      <recent name="com" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.decisioncustom.domain.vo" />
+      <recent name="com.decisioncustom.web.controller" />
+      <recent name="com.decisioncustom.utils.GlobalVariable" />
+      <recent name="com.decisioncustom.query" />
+      <recent name="com.decisioncustom.web.controller.advertising" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\djcWeChat\src\main\webapp\css" />
+      <recent name="D:\djcWeChat\src\main\webapp\WEB-INF\views\article" />
+      <recent name="D:\djcWeChat\src\main\webapp" />
+      <recent name="D:\djcWeChat\src\main\webapp\WEB-INF\views\column" />
+      <recent name="D:\djcWeChat\src\main\webapp\css\main" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Cat123">
+    <configuration name="Cat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.41" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="DecisionCustom:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/djc" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_jueche" />
+        <option name="HTTP_PORT" value="8080" />
+        <option name="JNDI_PORT" value="1101" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="59986" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="DecisionCustom:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="Cat123" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.41" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="C:\Program Files\Java\jdk1.8.0_111\jre">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8888/djc" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="DecisionCustom:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/djc" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_jueche_4" />
+        <option name="HTTP_PORT" value="8888" />
+        <option name="JNDI_PORT" value="1105" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="57459" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+        <EnvironmentVariables>
+          <option name="NAME" value="JAVA_TOOL_OPTIONS" />
+          <option name="VALUE" value="-Dfile.encoding=UTF-8" />
+          <option name="IS_PREDEFINED" value="false" />
+        </EnvironmentVariables>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="DecisionCustom:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="CatWeChat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.0.41" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:80/djc/" />
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dfile.encoding=UTF-8" />
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <deployment>
+        <artifact name="DecisionCustom:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/djc" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_djcWeChat" />
+        <option name="JNDI_PORT" value="1102" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62027" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+        <EnvironmentVariables>
+          <option name="NAME" value="JAVA_TOOL_OPTIONS" />
+          <option name="VALUE" value="-Dfile.encoding\=UTF-8" />
+          <option name="IS_PREDEFINED" value="false" />
+        </EnvironmentVariables>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="DecisionCustom:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.decisioncustom.wexin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.decisioncustom.wexin.Program" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="DecisionCustom" />
+      <envs />
+    </configuration>
+    <configuration name="WeixinTest.testAccessToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.decisioncustom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="DecisionCustom" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.decisioncustom" />
+      <option name="MAIN_CLASS_NAME" value="com.decisioncustom.WeixinTest" />
+      <option name="METHOD_NAME" value="testAccessToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="WeixinTest.testAddKF" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.decisioncustom.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="DecisionCustom" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.decisioncustom" />
+      <option name="MAIN_CLASS_NAME" value="com.decisioncustom.WeixinTest" />
+      <option name="METHOD_NAME" value="testAddKF" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="XmlpullParserUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.decisioncustom.wexin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.decisioncustom.wexin.XmlpullParserUtil" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="DecisionCustom" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="jueche" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="a" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.decisioncustom.wexin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="com.decisioncustom.wexin.a" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="DecisionCustom" />
+      <envs />
+    </configuration>
+    <list size="8">
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.CatWeChat" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Cat" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.Cat123" />
+      <item index="3" class="java.lang.String" itemvalue="Application.XmlpullParserUtil" />
+      <item index="4" class="java.lang.String" itemvalue="Application.a" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Program" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.WeixinTest.testAccessToken" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.WeixinTest.testAddKF" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.WeixinTest.testAddKF" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.WeixinTest.testAccessToken" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Program" />
+        <item index="3" class="java.lang.String" itemvalue="Application.a" />
+        <item index="4" class="java.lang.String" itemvalue="Application.XmlpullParserUtil" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b16e633-2768-4946-9af0-e15694f1c88e" name="Default" comment="" />
+      <created>1512526572209</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1512526572209</updated>
+      <workItem from="1512526577371" duration="23252000" />
+      <workItem from="1512608187499" duration="4541000" />
+      <workItem from="1512624911742" duration="7704000" />
+      <workItem from="1512696065310" duration="4629000" />
+      <workItem from="1512718260476" duration="7964000" />
+      <workItem from="1513126994117" duration="4975000" />
+      <workItem from="1513132135097" duration="23459000" />
+      <workItem from="1513213435845" duration="16738000" />
+      <workItem from="1513236644168" duration="109000" />
+      <workItem from="1513236779302" duration="181000" />
+      <workItem from="1513237000885" duration="58000" />
+      <workItem from="1513237172312" duration="128000" />
+      <workItem from="1513237565744" duration="130000" />
+      <workItem from="1513238037565" duration="1472000" />
+      <workItem from="1513239615655" duration="2270000" />
+      <workItem from="1513242008293" duration="3929000" />
+      <workItem from="1513299247556" duration="29427000" />
+      <workItem from="1513333040600" duration="690000" />
+      <workItem from="1513559314799" duration="21111000" />
+      <workItem from="1513582877547" duration="8023000" />
+      <workItem from="1513591066704" duration="1462000" />
+      <workItem from="1513644979443" duration="8505000" />
+      <workItem from="1513654007007" duration="4188000" />
+      <workItem from="1513661142721" duration="6367000" />
+      <workItem from="1513667637580" duration="1400000" />
+      <workItem from="1513669148914" duration="1408000" />
+      <workItem from="1513670806363" duration="9173000" />
+      <workItem from="1513731791266" duration="14766000" />
+      <workItem from="1515113547446" duration="5000" />
+      <workItem from="1515474635219" duration="14071000" />
+      <workItem from="1515567119768" duration="137000" />
+      <workItem from="1515567352796" duration="3454000" />
+      <workItem from="1515632851425" duration="27524000" />
+      <workItem from="1515719151489" duration="13316000" />
+      <workItem from="1515735867330" duration="9498000" />
+      <workItem from="1515978582558" duration="752000" />
+      <workItem from="1515984864789" duration="933000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="WeixinTest_testAccessToken - 2018.05.10 at 13h 50m 26s.xml">
+      <configuration name="WeixinTest.testAccessToken" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testAccessToken - 2018.05.16 at 16h 06m 40s.xml">
+      <configuration name="WeixinTest.testAccessToken" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testAccessToken - 2018.05.16 at 17h 46m 29s.xml">
+      <configuration name="WeixinTest.testAccessToken" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testAccessToken - 2018.05.16 at 18h 57m 21s.xml">
+      <configuration name="WeixinTest.testAccessToken" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testAccessToken - 2018.05.18 at 09h 44m 22s.xml">
+      <configuration name="WeixinTest.testAccessToken" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testAddKF - 2018.05.18 at 09h 49m 06s.xml">
+      <configuration name="WeixinTest.testAddKF" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testGetMenu - 2018.04.18 at 10h 02m 15s.xml">
+      <configuration name="WeixinTest.testGetMenu" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testGetMenu - 2018.04.19 at 13h 58m 01s.xml">
+      <configuration name="WeixinTest.testGetMenu" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testGetMenu - 2018.04.20 at 13h 32m 36s.xml">
+      <configuration name="WeixinTest.testGetMenu" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="WeixinTest_testGetMenu - 2018.05.10 at 13h 51m 02s.xml">
+      <configuration name="WeixinTest.testGetMenu" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="277749000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837838" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34864864" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1472973" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18758434" sideWeight="0.5028653" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13108882" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5405405" sideWeight="0.49713466" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17406876" sideWeight="0.7102616" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17406876" sideWeight="0.28973842" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25716332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22027028" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.486911" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17406876" sideWeight="0.28973842" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="BPMN Editor" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21991403" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="combo" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18758434" sideWeight="0.5028653" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.06805158" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="BPMN Editor" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21991403" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="12" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.486911" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29149798" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1605938" sideWeight="0.49713466" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928476" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28366762" sideWeight="0.7219973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23997134" sideWeight="0.2780027" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25716332" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22132254" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="08-06-05" />
+    <option name="LAST_COMMIT_MESSAGE" value="08-06-05" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="78" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/configuration.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/utils/myBatis/EmptyStringIfNull.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/decisioncustom/mapping/mybatis/EmployeeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+          <folding>
+            <marker date="1519452711614" expanded="true" signature="273:299" ph="select * fro... t_employee" />
+            <marker date="1519452711614" expanded="true" signature="396:439" ph="select * fro... t_employee" />
+            <marker date="1519452711614" expanded="true" signature="549:600" ph="select * fro... t_employee" />
+            <marker date="1519452711614" expanded="true" signature="719:1012" ph="insert into t_employee" />
+            <marker date="1519452711614" expanded="true" signature="1086:1127" ph="delete from " />
+            <marker date="1519452711614" expanded="true" signature="1206:1513" ph="update t_emp... " />
+            <marker date="1519452711614" expanded="true" signature="1641:1674" ph="select count... t_employee" />
+            <marker date="1519452711614" expanded="true" signature="1889:2337" ph="SELECT e.id,... t_employee" />
+            <marker date="1519452711614" expanded="true" signature="4128:4177" ph="update t_emp... " />
+            <marker date="1519452711614" expanded="true" signature="4296:4357" ph="DELETE FROM " />
+            <marker date="1519452711614" expanded="true" signature="4488:4639" ph="SELECT DISTI... t_customer_complain_employee" />
+            <marker date="1519452711614" expanded="true" signature="4770:4903" ph="SELECT DISTI... t_customer_employee" />
+            <marker date="1519452711614" expanded="true" signature="5032:5181" ph="SELECT DISTI... t_operating_record_employee" />
+            <marker date="1519452711614" expanded="true" signature="5602:5654" ph="select * fro... t_employee" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/TUserVOExample.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/generateConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/filter/WeixinAuthFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/dataSource.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="102" column="17" lean-forward="true" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dozer.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/spring-dozer.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="356" column="16" lean-forward="false" selection-start-line="356" selection-start-column="16" selection-end-line="356" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/mybatis-configuration.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="54" lean-forward="false" selection-start-line="5" selection-start-column="54" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JavaTools/maven/.m2/repository/net/sf/dozer/dozer/5.4.0/dozer-5.4.0.jar!/org/dozer/Mapper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/mapper/TArticleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="37" column="24" lean-forward="false" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/service/IArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="266" column="13" lean-forward="true" selection-start-line="266" selection-start-column="13" selection-end-line="266" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/unpackage/.confirmed_dependencies" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/pinchzoom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1530">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/pullDown.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1717">
+          <caret line="43" column="52" lean-forward="true" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/column/main-column.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5032">
+          <caret line="296" column="43" lean-forward="true" selection-start-line="296" selection-start-column="43" selection-end-line="296" selection-end-column="43" />
+          <folding>
+            <marker date="1528111921720" expanded="true" signature="12780:12810" ph="..." />
+            <marker date="1528111921720" expanded="true" signature="12880:12968" ph="..." />
+            <marker date="1528111921720" expanded="true" signature="13045:13122" ph="..." />
+            <marker date="1528111921720" expanded="true" signature="13206:13296" ph="..." />
+            <marker date="1528111921720" expanded="true" signature="32553:32583" ph="..." />
+            <marker date="1528111921720" expanded="true" signature="32653:32741" ph="..." />
+            <marker date="1528111921720" expanded="true" signature="32818:32895" ph="..." />
+            <marker date="1528111921720" expanded="true" signature="32979:33069" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/article.1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/risk.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="21" lean-forward="false" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/notColumn.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <marker date="1528114619469" expanded="false" signature="1135:1146" ph="..." />
+            <marker date="1528114619469" expanded="false" signature="1277:1289" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/JavaTools/maven/.m2/repository/org/apache/shiro/shiro-all/1.2.3/shiro-all-1.2.3.jar!/org/apache/shiro/subject/Subject.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="43" column="9" lean-forward="false" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/utils/AjaxResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/article.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/common/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="178" column="50" lean-forward="true" selection-start-line="178" selection-start-column="50" selection-end-line="178" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/notTime.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="122" />
+          <folding>
+            <marker date="1528114619477" expanded="false" signature="1135:1146" ph="..." />
+            <marker date="1528114619477" expanded="false" signature="1277:1289" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/jsp/articleInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/utils/APIResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#469#470#0" expanded="false" />
+            <element signature="e#526#527#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/shiro/realms/CrmRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/customer/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="157" column="38" lean-forward="true" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="38" />
+          <folding>
+            <element signature="method#toIndex#0;class#CustomerController#0" expanded="false" />
+            <element signature="method#customer_edit#0;class#CustomerController#0" expanded="false" />
+            <element signature="method#customer_save#0;class#CustomerController#0" expanded="false" />
+            <element signature="method#update#0;class#CustomerController#0" expanded="false" />
+            <element signature="method#password#0;class#CustomerController#0" expanded="false" />
+            <element signature="method#startProcess#0;class#CustomerController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/shiro/realms/FilterChainDefinitionMapFactoryBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/VideoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="829">
+          <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="e#1384#1385#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/TEmployee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326">
+          <caret line="99" column="27" lean-forward="false" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/EmployeeVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#302#303#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#402#403#0" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#776#777#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#972#973#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1038#1039#0" expanded="true" />
+            <element signature="e#1086#1087#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1168#1169#0" expanded="true" />
+            <element signature="e#1206#1207#0" expanded="true" />
+            <element signature="e#1268#1269#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dozer/dozer-mapping.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/column/ColumnController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2329">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="method#columns#0;class#ColumnController#0" expanded="false" />
+            <element signature="method#vColumn#0;class#ColumnController#0" expanded="false" />
+            <element signature="method#c#0;class#ColumnController#0" expanded="false" />
+            <element signature="method#suggest#0;class#ColumnController#0" expanded="false" />
+            <element signature="method#toIndexa#0;class#ColumnController#0" expanded="false" />
+            <element signature="method#videoData#0;class#ColumnController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/video/VideoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="134" column="39" lean-forward="true" selection-start-line="134" selection-start-column="39" selection-end-line="134" selection-end-column="39" />
+          <folding>
+            <element signature="method#toIndex0#0;class#VideoController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/ArticleVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/ArticleInfoVO.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/TUserVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/vo/VideoInfoVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="36" lean-forward="false" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/TVideo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-833">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/domain/TArticle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/decisioncustom/web/controller/article/ArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="279" column="17" lean-forward="true" selection-start-line="279" selection-start-column="17" selection-end-line="279" selection-end-column="17" />
+          <folding>
+            <element signature="method#toIndex0#0;class#ArticleController#0" expanded="false" />
+            <element signature="method#Index0#0;class#ArticleController#0" expanded="false" />
+            <element signature="method#vIndex#0;class#ArticleController#0" expanded="false" />
+            <element signature="method#toIndexList#0;class#ArticleController#0" expanded="false" />
+            <element signature="method#upd#0;class#ArticleController#0" expanded="false" />
+            <element signature="method#queryArticle#0;class#ArticleController#0" expanded="false" />
+            <element signature="method#query#0;class#ArticleController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_big_article.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3213">
+          <caret line="189" column="23" lean-forward="false" selection-start-line="189" selection-start-column="23" selection-end-line="189" selection-end-column="23" />
+          <folding>
+            <marker date="1528111529589" expanded="true" signature="9920:9950" ph="..." />
+            <marker date="1528111529589" expanded="true" signature="10016:10104" ph="..." />
+            <marker date="1528111529589" expanded="true" signature="10177:10254" ph="..." />
+            <marker date="1528111529589" expanded="true" signature="10334:10424" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/decisioncustom/mapping/mybatis/TArticleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="468" column="11" lean-forward="false" selection-start-line="468" selection-start-column="11" selection-end-line="468" selection-end-column="11" />
+          <folding>
+            <element signature="n#delete#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#insert#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#insert#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#update#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#update#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#resultMap#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#resultMap#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#collection#0;n#resultMap#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#resultMap#2;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#resultMap#3;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#sql#0;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#sql#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#sql#2;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#sql#3;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#1;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#3;n#mapper#0;n#!!top" expanded="false" />
+            <element signature="n#select#4;n#mapper#0;n#!!top" expanded="false" />
+            <marker date="1528185145000" expanded="true" signature="281:339" ph="delete from " />
+            <marker date="1528185145000" expanded="true" signature="5704:8065" ph="update t_art... " />
+            <marker date="1528185145000" expanded="true" signature="8168:9363" ph="update t_art... " />
+            <marker date="1528185145000" expanded="true" signature="9475:9656" ph="select t.nam... t_article" />
+            <marker date="1528185145000" expanded="true" signature="19595:19834" ph="select t.rea... t_article" />
+            <marker date="1528185145000" expanded="true" signature="19966:20322" ph="select , fro... " />
+            <marker date="1528185145000" expanded="true" signature="20102:20147" ph="/*LEFT JOIN " />
+            <marker date="1528185145000" expanded="true" signature="20469:20656" ph="select t.rea... t_article" />
+            <marker date="1528185145000" expanded="true" signature="20784:20953" ph="select from t_article" />
+            <marker date="1528185145000" expanded="true" signature="21076:21440" ph="select c.nam... t_article" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_query_medium_column.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="220" column="38" lean-forward="false" selection-start-line="220" selection-start-column="38" selection-end-line="220" selection-end-column="38" />
+          <folding>
+            <marker date="1528184049915" expanded="true" signature="8674:8704" ph="..." />
+            <marker date="1528184049915" expanded="true" signature="8770:8858" ph="..." />
+            <marker date="1528184049915" expanded="true" signature="8931:9008" ph="..." />
+            <marker date="1528184049915" expanded="true" signature="9088:9178" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article/list_small_article.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <marker date="1528187977050" expanded="true" signature="12746:12776" ph="..." />
+            <marker date="1528187977050" expanded="true" signature="12842:12930" ph="..." />
+            <marker date="1528187977050" expanded="true" signature="13003:13080" ph="..." />
+            <marker date="1528187977050" expanded="true" signature="13160:13250" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.37241378" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>DecisionCustom:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4269275" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4269275" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4269275" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4269275" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>DecisionCustom</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4269275" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.4269275" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 1、引入外部属性配置 -->
+	<context:property-placeholder location="classpath:jdbc.properties" />
+	
+	<!-- 2、数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${db.driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
+	</bean>
+	
+	<!-- 3、Mybatis的核心配置 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean"> 
+		<!-- 数据源 -->
+		<property name="dataSource" ref="dataSource" /> 
+		<!-- mybatis核心配置 -->
+		<!-- <property name="configLocation" value="classpath:mybatis-config.xml" />  -->
+		<!-- 类型别名设置 -->
+		<property name="typeAliasesPackage" value="com.decisioncustom.domain,com.decisioncustom.query" />
+		<!-- 映射文件设置 -->
+		<property name="mapperLocations" value="classpath:com/decisioncustom/mapping/mybatis/*Mapper.xml" />
+	</bean> 
+	
+	<!-- 4、引入外部配置文件 -->
+	<import resource="classpath:spring/spring-*.xml"/>
+	
+	<!-- 
+	 5、 事务配置
+          1）事务管理器
+          2）切面
+          3）通知
+	 -->
+     <!--事务管理器 -->
+	 <bean id="transactionManager"
+            class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 
+    	切面
+    	cn.itsource.crm.service..*.*(..)
+    	..*    : 匹配在之前目录下的所有资源（包括子或子的子）
+    	最后个.* ：匹配类的方法，代表所有方法的意思    
+    	(..)   ： 方法上的任意参数     
+     -->
+    <aop:config>
+        <aop:pointcut id="crmPointcut"
+                expression="execution(* com.decisioncustom.service..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="crmPointcut"/>
+    </aop:config>
+    <!-- 
+    		通知
+     -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="get*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="query*" propagation="SUPPORTS" read-only="true"/>
+            <tx:method name="list*" propagation="SUPPORTS" read-only="true"/>
+            <!-- 除了查询以外，都需要开启事务 -->
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+    
+</beans>

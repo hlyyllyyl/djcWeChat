@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+    	http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+    	http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+    	http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+    	http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        ">
+
+    <!-- 自动扫描 -->
+    <context:component-scan base-package="com.decisioncustom" />
+    <!-- 引入配置文件 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:jdbc.properties" />
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="${url}" />
+        <property name="username" value="${username}" />
+        <property name="password" value="${password}" />
+        <!-- 初始化连接大小 -->
+        <!-- 连接池最大空闲 -->
+        <property name="maxIdle" value="${maxIdle}"></property>
+        <!-- 连接池最小空闲 -->
+        <property name="minIdle" value="${minIdle}"></property>
+        <!-- 获取连接最大等待时间 -->
+        <property name="maxWait" value="${maxWait}"></property>
+    </bean>
+
+
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 自动扫描mapping.xml文件 -->
+        <property name="mapperLocations" value="classpath:com/decisioncustom/mapping/mybatis/*.xml"></property>
+        <property name="typeAliasesPackage">
+            <value>
+                com.decisioncustom.domain
+                com.decisioncustom.query
+            </value>
+        </property>
+        <property name="plugins">
+            <array>
+                <bean class="com.decisioncustom.utils.page.PageHelper">
+                    <property name="properties">
+                        <value>
+                            dialect=mysql
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+        <property name="configLocation" value="classpath:/spring/mybatis-configuration.xml"/>
+    </bean>
+
+
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.decisioncustom.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
+
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!-- 支持事务注解 -->
+    <tx:annotation-driven/>
+    <!-- 配置Spring的扫描，只对service进行扫描 -->
+    <context:component-scan base-package="com.decisioncustom.service" />
+
+
+    <bean id="reminderProcessor" class="com.decisioncustom.listener.stockPriceTimeListener">
+    </bean>
+    <!-- 引入Spring的任务配置文件。 -->
+    <!-- <import resource="spring-task.xml" />-->
+    <!-- 引入shiro的xml -->
+    <!--<import resource="classpath:spring/spring-shiro.xml"/>-->
+
+    <!-- 4、引入外部配置文件 -->
+    <import resource="classpath:spring/spring-*.xml"/>
+
+    <context:annotation-config/>
+    <aop:aspectj-autoproxy />
+
+    <!-- 配置log记录 -->
+    <bean id="systemLogUntil" class="com.decisioncustom.utils.log.SystemLogUntil">
+    </bean>
+    <!-- 配置属性 -->
+    <aop:config>
+        <!-- 配置切面 -->
+        <aop:pointcut expression="execution(* com.decisioncustom.service.I*Service.*(..))" id="pointCut"/>
+        <!-- 配置执行方法-->
+        <aop:aspect ref="systemLogUntil">
+            <!--配置执行的方法的位置-->
+            <aop:after-returning method="writeLog" pointcut-ref="pointCut"/>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>

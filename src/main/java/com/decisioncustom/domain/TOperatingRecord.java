@@ -1,0 +1,723 @@
+package com.decisioncustom.domain;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+public class TOperatingRecord {
+
+    private List<TEmployee> Employees = new ArrayList<>();
+
+    private List<TCustomer> Customers = new ArrayList<>();
+
+    private TEmployee adviser;
+
+    private TEmployee serviceMan;
+
+    private String recommendDateStr;
+
+    private String actualBuyingTimeStr;
+
+    private String actualSellingTimeStr;
+
+    public List<TOperatingRecordEmployee> getOperatingRecordEmployee() {
+        List<TOperatingRecordEmployee> list_rp = new ArrayList<>();
+        Long id = this.getId();
+        List<TEmployee> p = this.getEmployees();
+        for (TEmployee p2 : p) {
+            list_rp.add(new TOperatingRecordEmployee(id, p2.getId()));
+        }
+        return list_rp;
+    }
+
+    public List<TOperatingRecordCustomer> getOperatingRecordCustomer() {
+        List<TOperatingRecordCustomer> list_rp = new ArrayList<>();
+        Long id = this.getId();
+        List<TCustomer> p = this.getCustomers();
+        for (TCustomer p2 : p) {
+            list_rp.add(new TOperatingRecordCustomer(id, p2.getId()));
+        }
+        return list_rp;
+    }
+
+    private String adviserStr;
+
+    private String[] serviceManStrs;
+
+    private String[] customerStrs;
+
+    public String[] getCustomerStrs() {
+        return customerStrs;
+    }
+
+    public void setCustomerStrs(String[] customerStrs) {
+        this.customerStrs = customerStrs;
+    }
+
+    public String getAdviserStr() {
+        return adviserStr;
+    }
+
+    public void setAdviserStr(String adviserStr) {
+        this.adviserStr = adviserStr;
+    }
+
+    public String[] getServiceManStrs() {
+        return serviceManStrs;
+    }
+
+    public void setServiceManStrs(String[] serviceManStrs) {
+        this.serviceManStrs = serviceManStrs;
+    }
+
+    public List<TEmployee> getEmployees() {
+        return Employees;
+    }
+
+    public void setEmployees(List<TEmployee> employees) {
+        Employees = employees;
+    }
+
+    public List<TCustomer> getCustomers() {
+        return Customers;
+    }
+
+    public void setCustomers(List<TCustomer> customers) {
+        Customers = customers;
+    }
+
+    public TEmployee getServiceMan() {
+        return serviceMan;
+    }
+
+    public void setServiceMan(TEmployee serviceMan) {
+        this.serviceMan = serviceMan;
+    }
+
+    public TEmployee getAdviser() {
+        return adviser;
+    }
+
+    public void setAdviser(TEmployee adviser) {
+        this.adviser = adviser;
+    }
+
+    public String getActualSellingTimeStr() {
+        return actualSellingTimeStr;
+    }
+
+    public void setActualSellingTimeStr(String actualSellingTimeStr) {
+        this.actualSellingTimeStr = actualSellingTimeStr;
+    }
+
+    public String getActualBuyingTimeStr() {
+        return actualBuyingTimeStr;
+    }
+
+    public void setActualBuyingTimeStr(String actualBuyingTimeStr) {
+        this.actualBuyingTimeStr = actualBuyingTimeStr;
+    }
+
+    public String getRecommendDateStr() {
+        return recommendDateStr;
+    }
+
+    public void setRecommendDateStr(String recommendDateStr) {
+        this.recommendDateStr = recommendDateStr;
+    }
+
+    @Override
+    public String toString() {
+        return "TOperatingRecord{" +
+                "Employees=" + Employees +
+                ", Customers=" + Customers +
+                ", adviser=" + adviser +
+                ", serviceMan=" + serviceMan +
+                ", recommendDateStr='" + recommendDateStr + '\'' +
+                ", actualBuyingTimeStr='" + actualBuyingTimeStr + '\'' +
+                ", actualSellingTimeStr='" + actualSellingTimeStr + '\'' +
+                ", adviserStr='" + adviserStr + '\'' +
+                ", serviceManStrs=" + Arrays.toString(serviceManStrs) +
+                ", id=" + id +
+                ", recommendDate=" + recommendDate +
+                ", stockCode='" + stockCode + '\'' +
+                ", stockName='" + stockName + '\'' +
+                ", recommendBidPrice=" + recommendBidPrice +
+                ", recommendPosition=" + recommendPosition +
+                ", recommendStopProfit=" + recommendStopProfit +
+                ", recommendStopLoss=" + recommendStopLoss +
+                ", adviserId=" + adviserId +
+                ", latestClosingPrice=" + latestClosingPrice +
+                ", actualBuyingTime=" + actualBuyingTime +
+                ", actualBidPrice=" + actualBidPrice +
+                ", actualSellingTime=" + actualSellingTime +
+                ", actualSellingPrice=" + actualSellingPrice +
+                ", actualPosition=" + actualPosition +
+                ", outOfPosition=" + outOfPosition +
+                ", notOutOfPosition=" + notOutOfPosition +
+                ", riskWarning=" + riskWarning +
+                '}';
+    }
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.id
+     *
+     * @mbggenerated
+     */
+    private Long id;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.recommend_date
+     *
+     * @mbggenerated
+     */
+    private Date recommendDate;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.stock_code
+     *
+     * @mbggenerated
+     */
+    private String stockCode;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.stock_name
+     *
+     * @mbggenerated
+     */
+    private String stockName;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.recommend_bid_price
+     *
+     * @mbggenerated
+     */
+    private BigDecimal recommendBidPrice;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.recommend_position
+     *
+     * @mbggenerated
+     */
+    private BigDecimal recommendPosition;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.recommend_stop_profit
+     *
+     * @mbggenerated
+     */
+    private BigDecimal recommendStopProfit;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.recommend_stop_loss
+     *
+     * @mbggenerated
+     */
+    private BigDecimal recommendStopLoss;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.adviser_id
+     *
+     * @mbggenerated
+     */
+    private Long adviserId;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.latest_closing_price
+     *
+     * @mbggenerated
+     */
+    private BigDecimal latestClosingPrice;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.actual_buying_time
+     *
+     * @mbggenerated
+     */
+    private Date actualBuyingTime;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.actual_bid_price
+     *
+     * @mbggenerated
+     */
+    private BigDecimal actualBidPrice;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.actual_selling_time
+     *
+     * @mbggenerated
+     */
+    private Date actualSellingTime;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.actual_selling_price
+     *
+     * @mbggenerated
+     */
+    private BigDecimal actualSellingPrice;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.actual_position
+     *
+     * @mbggenerated
+     */
+    private BigDecimal actualPosition;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.out_of_position
+     *
+     * @mbggenerated
+     */
+    private BigDecimal outOfPosition;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.not_out_of_position
+     *
+     * @mbggenerated
+     */
+    private BigDecimal notOutOfPosition;
+
+    /**
+     * This field was generated by MyBatis Generator.
+     * This field corresponds to the database column t_operating_record.risk_warning
+     *
+     * @mbggenerated
+     */
+    private Integer riskWarning;
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.id
+     *
+     * @return the value of t_operating_record.id
+     *
+     * @mbggenerated
+     */
+    public Long getId() {
+        return id;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.id
+     *
+     * @param id the value for t_operating_record.id
+     *
+     * @mbggenerated
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.recommend_date
+     *
+     * @return the value of t_operating_record.recommend_date
+     *
+     * @mbggenerated
+     */
+    public Date getRecommendDate() {
+        return recommendDate;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.recommend_date
+     *
+     * @param recommendDate the value for t_operating_record.recommend_date
+     *
+     * @mbggenerated
+     */
+    public void setRecommendDate(Date recommendDate) {
+        this.recommendDate = recommendDate;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.stock_code
+     *
+     * @return the value of t_operating_record.stock_code
+     *
+     * @mbggenerated
+     */
+    public String getStockCode() {
+        return stockCode;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.stock_code
+     *
+     * @param stockCode the value for t_operating_record.stock_code
+     *
+     * @mbggenerated
+     */
+    public void setStockCode(String stockCode) {
+        this.stockCode = stockCode == null ? null : stockCode.trim();
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.stock_name
+     *
+     * @return the value of t_operating_record.stock_name
+     *
+     * @mbggenerated
+     */
+    public String getStockName() {
+        return stockName;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.stock_name
+     *
+     * @param stockName the value for t_operating_record.stock_name
+     *
+     * @mbggenerated
+     */
+    public void setStockName(String stockName) {
+        this.stockName = stockName == null ? null : stockName.trim();
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.recommend_bid_price
+     *
+     * @return the value of t_operating_record.recommend_bid_price
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getRecommendBidPrice() {
+        return recommendBidPrice;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.recommend_bid_price
+     *
+     * @param recommendBidPrice the value for t_operating_record.recommend_bid_price
+     *
+     * @mbggenerated
+     */
+    public void setRecommendBidPrice(BigDecimal recommendBidPrice) {
+        this.recommendBidPrice = recommendBidPrice;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.recommend_position
+     *
+     * @return the value of t_operating_record.recommend_position
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getRecommendPosition() {
+        return recommendPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.recommend_position
+     *
+     * @param recommendPosition the value for t_operating_record.recommend_position
+     *
+     * @mbggenerated
+     */
+    public void setRecommendPosition(BigDecimal recommendPosition) {
+        this.recommendPosition = recommendPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.recommend_stop_profit
+     *
+     * @return the value of t_operating_record.recommend_stop_profit
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getRecommendStopProfit() {
+        return recommendStopProfit;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.recommend_stop_profit
+     *
+     * @param recommendStopProfit the value for t_operating_record.recommend_stop_profit
+     *
+     * @mbggenerated
+     */
+    public void setRecommendStopProfit(BigDecimal recommendStopProfit) {
+        this.recommendStopProfit = recommendStopProfit;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.recommend_stop_loss
+     *
+     * @return the value of t_operating_record.recommend_stop_loss
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getRecommendStopLoss() {
+        return recommendStopLoss;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.recommend_stop_loss
+     *
+     * @param recommendStopLoss the value for t_operating_record.recommend_stop_loss
+     *
+     * @mbggenerated
+     */
+    public void setRecommendStopLoss(BigDecimal recommendStopLoss) {
+        this.recommendStopLoss = recommendStopLoss;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.adviser_id
+     *
+     * @return the value of t_operating_record.adviser_id
+     *
+     * @mbggenerated
+     */
+    public Long getAdviserId() {
+        return adviserId;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.adviser_id
+     *
+     * @param adviserId the value for t_operating_record.adviser_id
+     *
+     * @mbggenerated
+     */
+    public void setAdviserId(Long adviserId) {
+        this.adviserId = adviserId;
+    }
+
+    public BigDecimal getLatestClosingPrice() {
+        return latestClosingPrice;
+    }
+
+    public void setLatestClosingPrice(BigDecimal latestClosingPrice) {
+        this.latestClosingPrice = latestClosingPrice;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.actual_buying_time
+     *
+     * @return the value of t_operating_record.actual_buying_time
+     *
+     * @mbggenerated
+     */
+    public Date getActualBuyingTime() {
+        return actualBuyingTime;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.actual_buying_time
+     *
+     * @param actualBuyingTime the value for t_operating_record.actual_buying_time
+     *
+     * @mbggenerated
+     */
+    public void setActualBuyingTime(Date actualBuyingTime) {
+        this.actualBuyingTime = actualBuyingTime;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.actual_bid_price
+     *
+     * @return the value of t_operating_record.actual_bid_price
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getActualBidPrice() {
+        return actualBidPrice;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.actual_bid_price
+     *
+     * @param actualBidPrice the value for t_operating_record.actual_bid_price
+     *
+     * @mbggenerated
+     */
+    public void setActualBidPrice(BigDecimal actualBidPrice) {
+        this.actualBidPrice = actualBidPrice;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.actual_selling_time
+     *
+     * @return the value of t_operating_record.actual_selling_time
+     *
+     * @mbggenerated
+     */
+    public Date getActualSellingTime() {
+        return actualSellingTime;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.actual_selling_time
+     *
+     * @param actualSellingTime the value for t_operating_record.actual_selling_time
+     *
+     * @mbggenerated
+     */
+    public void setActualSellingTime(Date actualSellingTime) {
+        this.actualSellingTime = actualSellingTime;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.actual_selling_price
+     *
+     * @return the value of t_operating_record.actual_selling_price
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getActualSellingPrice() {
+        return actualSellingPrice;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.actual_selling_price
+     *
+     * @param actualSellingPrice the value for t_operating_record.actual_selling_price
+     *
+     * @mbggenerated
+     */
+    public void setActualSellingPrice(BigDecimal actualSellingPrice) {
+        this.actualSellingPrice = actualSellingPrice;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.actual_position
+     *
+     * @return the value of t_operating_record.actual_position
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getActualPosition() {
+        return actualPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.actual_position
+     *
+     * @param actualPosition the value for t_operating_record.actual_position
+     *
+     * @mbggenerated
+     */
+    public void setActualPosition(BigDecimal actualPosition) {
+        this.actualPosition = actualPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.out_of_position
+     *
+     * @return the value of t_operating_record.out_of_position
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getOutOfPosition() {
+        return outOfPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.out_of_position
+     *
+     * @param outOfPosition the value for t_operating_record.out_of_position
+     *
+     * @mbggenerated
+     */
+    public void setOutOfPosition(BigDecimal outOfPosition) {
+        this.outOfPosition = outOfPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.not_out_of_position
+     *
+     * @return the value of t_operating_record.not_out_of_position
+     *
+     * @mbggenerated
+     */
+    public BigDecimal getNotOutOfPosition() {
+        return notOutOfPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.not_out_of_position
+     *
+     * @param notOutOfPosition the value for t_operating_record.not_out_of_position
+     *
+     * @mbggenerated
+     */
+    public void setNotOutOfPosition(BigDecimal notOutOfPosition) {
+        this.notOutOfPosition = notOutOfPosition;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method returns the value of the database column t_operating_record.risk_warning
+     *
+     * @return the value of t_operating_record.risk_warning
+     *
+     * @mbggenerated
+     */
+    public Integer getRiskWarning() {
+        return riskWarning;
+    }
+
+    /**
+     * This method was generated by MyBatis Generator.
+     * This method sets the value of the database column t_operating_record.risk_warning
+     *
+     * @param riskWarning the value for t_operating_record.risk_warning
+     *
+     * @mbggenerated
+     */
+    public void setRiskWarning(Integer riskWarning) {
+        this.riskWarning = riskWarning;
+    }
+}

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TCustomerRecordMapper">
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TCustomerRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="stock_id" jdbcType="BIGINT" property="stockId" />
+    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+    <result column="present_price" jdbcType="DECIMAL" property="presentPrice" />
+    <result column="stock_code" jdbcType="VARCHAR" property="stockCode" />
+    <result column="stock_name" jdbcType="VARCHAR" property="stockName" />
+    <result column="transaction_price" jdbcType="DECIMAL" property="transactionPrice" />
+    <result column="transaction_num" jdbcType="BIGINT" property="transactionNum" />
+    <result column="transaction_amont" jdbcType="DECIMAL" property="transactionAmont" />
+    <result column="profit_loss_than" jdbcType="DECIMAL" property="profitLossThan" />
+    <result column="profit_loss_amont" jdbcType="DECIMAL" property="profitLossAmont" />
+    <result column="operation_date" jdbcType="TIMESTAMP" property="operationDate" />
+    <result column="operation_type" jdbcType="INTEGER" property="operationType" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, stock_id, customer_id, present_price, stock_code, stock_name, transaction_price,
+    transaction_num, transaction_amont, profit_loss_than, profit_loss_amont, operation_date, 
+    operation_type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_customer_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_customer_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TCustomerRecord">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_customer_record (stock_id, customer_id, present_price, 
+      stock_code, stock_name, transaction_price, 
+      transaction_num, transaction_amont, profit_loss_than, 
+      profit_loss_amont, operation_date, operation_type
+      )
+    values (#{stockId,jdbcType=BIGINT}, #{customerId,jdbcType=BIGINT}, #{presentPrice,jdbcType=DECIMAL}, 
+      #{stockCode,jdbcType=VARCHAR}, #{stockName,jdbcType=VARCHAR}, #{transactionPrice,jdbcType=DECIMAL}, 
+      #{transactionNum,jdbcType=BIGINT}, #{transactionAmont,jdbcType=DECIMAL}, #{profitLossThan,jdbcType=DECIMAL}, 
+      #{profitLossAmont,jdbcType=DECIMAL}, #{operationDate,jdbcType=TIMESTAMP}, #{operationType,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TCustomerRecord">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_customer_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stockId != null">
+        stock_id,
+      </if>
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="presentPrice != null">
+        present_price,
+      </if>
+      <if test="stockCode != null">
+        stock_code,
+      </if>
+      <if test="stockName != null">
+        stock_name,
+      </if>
+      <if test="transactionPrice != null">
+        transaction_price,
+      </if>
+      <if test="transactionNum != null">
+        transaction_num,
+      </if>
+      <if test="transactionAmont != null">
+        transaction_amont,
+      </if>
+      <if test="profitLossThan != null">
+        profit_loss_than,
+      </if>
+      <if test="profitLossAmont != null">
+        profit_loss_amont,
+      </if>
+      <if test="operationDate != null">
+        operation_date,
+      </if>
+      <if test="operationType != null">
+        operation_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stockId != null">
+        #{stockId,jdbcType=BIGINT},
+      </if>
+      <if test="customerId != null">
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="presentPrice != null">
+        #{presentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="stockCode != null">
+        #{stockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="stockName != null">
+        #{stockName,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionPrice != null">
+        #{transactionPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="transactionNum != null">
+        #{transactionNum,jdbcType=BIGINT},
+      </if>
+      <if test="transactionAmont != null">
+        #{transactionAmont,jdbcType=DECIMAL},
+      </if>
+      <if test="profitLossThan != null">
+        #{profitLossThan,jdbcType=DECIMAL},
+      </if>
+      <if test="profitLossAmont != null">
+        #{profitLossAmont,jdbcType=DECIMAL},
+      </if>
+      <if test="operationDate != null">
+        #{operationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operationType != null">
+        #{operationType,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TCustomerRecord">
+    update t_customer_record
+    <set>
+      <if test="stockId != null">
+        stock_id = #{stockId,jdbcType=BIGINT},
+      </if>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="presentPrice != null">
+        present_price = #{presentPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="stockCode != null">
+        stock_code = #{stockCode,jdbcType=VARCHAR},
+      </if>
+      <if test="stockName != null">
+        stock_name = #{stockName,jdbcType=VARCHAR},
+      </if>
+      <if test="transactionPrice != null">
+        transaction_price = #{transactionPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="transactionNum != null">
+        transaction_num = #{transactionNum,jdbcType=BIGINT},
+      </if>
+      <if test="transactionAmont != null">
+        transaction_amont = #{transactionAmont,jdbcType=DECIMAL},
+      </if>
+      <if test="profitLossThan != null">
+        profit_loss_than = #{profitLossThan,jdbcType=DECIMAL},
+      </if>
+      <if test="profitLossAmont != null">
+        profit_loss_amont = #{profitLossAmont,jdbcType=DECIMAL},
+      </if>
+      <if test="operationDate != null">
+        operation_date = #{operationDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operationType != null">
+        operation_type = #{operationType,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TCustomerRecord">
+    update t_customer_record
+    set stock_id = #{stockId,jdbcType=BIGINT},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      present_price = #{presentPrice,jdbcType=DECIMAL},
+      stock_code = #{stockCode,jdbcType=VARCHAR},
+      stock_name = #{stockName,jdbcType=VARCHAR},
+      transaction_price = #{transactionPrice,jdbcType=DECIMAL},
+      transaction_num = #{transactionNum,jdbcType=BIGINT},
+      transaction_amont = #{transactionAmont,jdbcType=DECIMAL},
+      profit_loss_than = #{profitLossThan,jdbcType=DECIMAL},
+      profit_loss_amont = #{profitLossAmont,jdbcType=DECIMAL},
+      operation_date = #{operationDate,jdbcType=TIMESTAMP},
+      operation_type = #{operationType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByCustomerId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_customer_record
+    where customer_id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByStockId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_customer_record
+    where stock_id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_customer_record
+  </select>
+</mapper>

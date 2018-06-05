@@ -1,0 +1,21 @@
+textarea.form-control {
+    height: auto;
+    width: 600px;
+}
+a.close {
+    position: absolute;
+    top: 15px;
+    right: 13px;
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 24px;
+    line-height: 22px;
+    color: lightslategrey;
+    background-color: lightgrey;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    transition: .25s;
+}

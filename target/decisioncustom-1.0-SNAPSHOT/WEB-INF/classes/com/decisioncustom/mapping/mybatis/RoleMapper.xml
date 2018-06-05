@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.RoleMapper">
+
+
+
+
+
+	<!-- 保存一个 -->
+	<insert id="save" parameterType="Role" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into t_role(sn,name) values(#{sn},#{name})
+	</insert>
+
+
+
+	<!-- 删除一个 -->
+	<delete id="remove" parameterType="long">
+		delete from t_role where id =
+		#{id}
+	</delete>
+
+	<!-- 修改一个数据 -->
+	<update id="update" parameterType="Role">
+		update t_role set sn =
+		#{sn},name=#{name} where id = #{id}
+	</update>
+	
+	<select id="getAll" parameterType="RoleQuery"
+			resultMap="RoleMap">
+		SELECT * from t_role
+	</select>
+	
+	<select id="getOne" parameterType="Long" resultMap="RoleMap">
+		SELECT * from t_role where id = #{id}
+	</select>
+
+
+	<!-- 添加两个方法 -->
+	<!-- 查询总数 -->
+	<select id="getCountByQuery" parameterType="RoleQuery"
+		resultType="int">
+		select count(*) from t_role
+	</select>
+
+	<!-- 查询数据 -->
+	<select id="getDataByQuery" parameterType="RoleQuery"
+		resultMap="RoleMap">
+		select * from t_role
+	</select>
+
+	<resultMap type="Role" id="RoleMap">
+		<id property="id" column="id"/>
+		<result property="sn" column="sn"/>
+		<result property="name" column="name"/>
+		<collection property="permissions" javaType="arrayList" ofType="com.decisioncustom.domain.Permission"
+		 select="com.decisioncustom.mapper.PermissionMapper.roleId_permission" column="id"></collection>
+	</resultMap>
+
+
+
+
+
+	<select id="getRoleByLoginId" parameterType="long" resultMap="getRoleByLoginIdMap">
+		SELECT
+		r.sn,
+		r.name
+		FROM
+		t_employee e
+		LEFT JOIN t_employee_role er ON e.id = er.employee_id
+		LEFT JOIN t_role r ON r.id = er.role_id
+		WHERE
+		e.id = #{loginId}
+	</select>
+	<resultMap type="Role" id="getRoleByLoginIdMap">
+		<id property="id" column="id"/>
+		<result property="sn" column="sn"/>
+		<result property="name" column="name"/>
+	</resultMap>
+
+
+
+
+
+
+
+
+
+
+	
+	
+	<!-- 通过roleid删除中间表数据 removeRole_Permission -->
+<delete id="removeRole_Permission" parameterType="long">
+	DELETE
+	FROM
+	t_role_permission
+	WHERE
+	role_id = #{id}
+    </delete>	
+    
+    
+    
+	<!-- 保存 role_permission中间表关系 -->
+	<insert id="saveRole_Permissions" parameterType="list">
+	insert into  t_role_permission(role_id,permission_id)
+					values
+	<foreach item="item" index="index" collection="list"
+		separator="," >
+		(#{item.roleId},#{item.permissionId})
+	</foreach>
+</insert>
+
+
+<!-- 根据emp id查询所有角色 -->
+	<select id="employeeId_role" parameterType="long" resultType="Role">
+	SELECT DISTINCT
+		r.*
+		from
+		t_employee_role t 
+		join t_role r on t.role_id = r.id
+		where
+		t.employee_id=#{id}
+	</select> 
+
+
+</mapper>
+
+
+
+

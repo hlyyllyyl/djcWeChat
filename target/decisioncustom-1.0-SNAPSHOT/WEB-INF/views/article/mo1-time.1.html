@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>四川大决策-公共</title>
+    <script src="js/mui.min.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/mo1.css" rel="stylesheet" />
+</head>
+<style>
+ 
+</style>
+
+<body>
+    <!-- 头部 -->
+    <header class="mui-bar1 mui-bar-nav1">
+        <a class=" mui-icon1 mui-icon-left-nav mui-pull-left1" herf="index.html">返回</a>
+        <h1 class="mui-title1" style="color:#fff;">四川大决策</h1>
+        <a class="mui-btn1 mui-btn-link1 mui-pull-right1 mui-btn-blue1 mui-disabled1">...</a>
+    </header>
+    <div class="list-top"></div>
+
+    <div class="list-top"></div>
+    <div class="conter">
+        <div class="title">
+            <!-- <img src="imgs/24agall_big.png" alt=""> -->
+        </div>
+        <span class="time-tt">2018-04-03</span>
+        <span class="time-tt">星期二</span>
+        <div class="new-con">
+            <ul id="lists">
+                <li>
+                    <div class="gHIxRM">
+                        <div class=" ">
+                            <span class="time2">10:43</span>
+                            <span class="content brief">【新华社：美大豆如被加税会怎样？有替代产品对中国影响有限】财联社4月10日讯，新华社发文称，2017年我国进口美国大豆3285.4万吨，占我国大豆进口量的34.4%。加征关税将直接降低美国大豆的价格优势，对华大豆市场份额或将被巴西、阿根廷等其他大豆主产国所替代。另一方面，对进口大豆抬高门槛一定程度上将刺激我国豆农扩大生产。专家认为，应适当恢复国内大豆种植面积。随着消费升级，越来越多消费者选购橄榄油、菜籽油、葵花籽油等产品，市场选择更加多样化，终端消费对大豆油的需求增长有限。</span>
+                        </div>
+                         <div class="info">
+                            <span class="data">
+                                <span class="read">阅 21947</span>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                        <div class="gHIxRM">
+                            <div class=" ">
+                                <span class="time2">10:43</span>
+                                <span class="content brief">【新华社：美大豆如被加税会怎样？有替代产品对中国影响有限】财联社4月10日讯，新华社发文称，2017年我国进口美国大豆3285.4万吨，占我国大豆进口量的34.4%。加征关税将直接降低美国大豆的价格优势，对华大豆市场份额或将被巴西、阿根廷等其他大豆主产国所替代。另一方面，对进口大豆抬高门槛一定程度上将刺激我国豆农扩大生产。专家认为，应适当恢复国内大豆种植面积。随着消费升级，越来越多消费者选购橄榄油、菜籽油、葵花籽油等产品，市场选择更加多样化，终端消费对大豆油的需求增长有限。</span>
+                            </div>
+                             <div class="info">
+                                <span class="data">
+                                    <span class="read">阅 21947</span>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+            </ul>
+
+            <div style="height:80px;"></div>
+            <footer class="bottomNav" id="#bottomNav">
+                <ul class="">
+                    <li class="btn-bom">
+                        <a href="mo3-tit.html" class="bom-a">
+                            <img src="imgs/s@2x.png" alt="">
+                            <p class="zt">首页</p>
+                        </a>
+                    </li>
+                    <li class="btn-bom">
+                        <a href="mo2-img.html" class="bom-a">
+                            <img src="imgs/g@2x.png" alt="">
+                            <p>交易</p>
+                        </a>
+                    </li>
+                    <li class="btn-bom">
+                        <a href="logo.html" class="bom-a">
+                            <img class="tu-cont" src="imgs/logo@2x.png" alt="">
+                        </a>
+                    </li>
+                    <li class="btn-bom">
+                        <a href="mo1-time.html" class="bom-a">
+                            <img src="imgs/407@2x.png" alt="">
+                            <p>持仓</p>
+                        </a>
+                    </li>
+                    <li class="btn-bom">
+                        <a href="ask.html" class="bom-a">
+                            <img src="imgs/w-1@2x.png" alt="">
+                            <p>我的</p>
+                        </a>
+                    </li>
+                </ul>
+         </footer>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $("#lists").on("click", ".content", function (event) {
+            var target = $(event.target);
+            target.toggleClass('brief');
+            $index++;
+            console.log($index);
+        })
+    })
+    var $index = 0;
+   
+
+</script>
+
+</html>

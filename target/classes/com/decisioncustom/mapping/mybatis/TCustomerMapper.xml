@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TCustomerMapper">
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TCustomer">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="mobile" jdbcType="BIGINT" property="mobile" />
+    <result column="wx_head_img" jdbcType="VARCHAR" property="wxHeadImg" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="from_user_name" jdbcType="VARCHAR" property="fromUserName" />
+    <result column="wechat_name" jdbcType="VARCHAR" property="wechatName" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="turn_on_time" jdbcType="TIMESTAMP" property="turnOnTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="register_time" jdbcType="TIMESTAMP" property="registerTime" />
+    <result column="input_man_id" jdbcType="BIGINT" property="inputManId" />
+    <result column="serviceman_id" jdbcType="BIGINT" property="servicemanId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="state" jdbcType="BIGINT" property="state" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="serviceMan">
+      <id column="servicemanId" property="id" />
+      <result column="serviceManName" property="realName" />
+      <result column="quick_mark" property="quickMark" />
+      <result column="practice_num" property="practiceNum" />
+      <result column="phone_num" property="phoneNum" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TEmployee" property="inputMan">
+      <id column="inputManId" property="id" />
+      <result column="inputManName" property="realName" />
+    </association>
+  </resultMap>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_customer c
+    where c.id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_customer
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TCustomer">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_customer (customer_name, id_card, password,
+    real_name, age, gender,
+    mobile, wx_head_img, city,
+    province, from_user_name, wechat_name,
+    wechat, turn_on_time, end_time,
+    register_time, input_man_id, serviceman_id,
+    remark, state)
+    values (#{customerName,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+    #{realName,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{gender,jdbcType=INTEGER},
+    #{mobile,jdbcType=BIGINT}, #{wxHeadImg,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR},
+    #{province,jdbcType=VARCHAR}, #{fromUserName,jdbcType=VARCHAR}, #{wechatName,jdbcType=VARCHAR},
+    #{wechat,jdbcType=VARCHAR}, #{turnOnTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP},
+    #{registerTime,jdbcType=TIMESTAMP}, #{inputManId,jdbcType=BIGINT}, #{servicemanId,jdbcType=BIGINT},
+    #{remark,jdbcType=VARCHAR}, #{state,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TCustomer">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_customer
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="customerName != null">
+        customer_name,
+      </if>
+      <if test="idCard != null">
+        id_card,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="realName != null">
+        real_name,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="wxHeadImg != null">
+        wx_head_img,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="province != null">
+        province,
+      </if>
+      <if test="fromUserName != null">
+        from_user_name,
+      </if>
+      <if test="wechatName != null">
+        wechat_name,
+      </if>
+      <if test="wechat != null">
+        wechat,
+      </if>
+      <if test="turnOnTime != null">
+        turn_on_time,
+      </if>
+      <if test="endTime != null">
+        end_time,
+      </if>
+      <if test="registerTime != null">
+        register_time,
+      </if>
+      <if test="inputManId != null">
+        input_man_id,
+      </if>
+      <if test="servicemanId != null">
+        serviceman_id,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="customerName != null">
+        #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=BIGINT},
+      </if>
+      <if test="wxHeadImg != null">
+        #{wxHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="fromUserName != null">
+        #{fromUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatName != null">
+        #{wechatName,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="turnOnTime != null">
+        #{turnOnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerTime != null">
+        #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputManId != null">
+        #{inputManId,jdbcType=BIGINT},
+      </if>
+      <if test="servicemanId != null">
+        #{servicemanId,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TCustomer">
+    update t_customer
+    <set>
+      <if test="customerName != null">
+        customer_name = #{customerName,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="realName != null">
+        real_name = #{realName,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=BIGINT},
+      </if>
+      <if test="wxHeadImg != null">
+        wx_head_img = #{wxHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null">
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="fromUserName != null">
+        from_user_name = #{fromUserName,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatName != null">
+        wechat_name = #{wechatName,jdbcType=VARCHAR},
+      </if>
+      <if test="wechat != null">
+        wechat = #{wechat,jdbcType=VARCHAR},
+      </if>
+      <if test="turnOnTime != null">
+        turn_on_time = #{turnOnTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="registerTime != null">
+        register_time = #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputManId != null">
+        input_man_id = #{inputManId,jdbcType=BIGINT},
+      </if>
+      <if test="servicemanId != null">
+        serviceman_id = #{servicemanId,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TCustomer">
+    update t_customer
+    set customer_name = #{customerName,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      real_name = #{realName,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      gender = #{gender,jdbcType=INTEGER},
+      mobile = #{mobile,jdbcType=BIGINT},
+      wx_head_img = #{wxHeadImg,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      from_user_name = #{fromUserName,jdbcType=VARCHAR},
+      wechat_name = #{wechatName,jdbcType=VARCHAR},
+      wechat = #{wechat,jdbcType=VARCHAR},
+      turn_on_time = #{turnOnTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      register_time = #{registerTime,jdbcType=TIMESTAMP},
+      input_man_id = #{inputManId,jdbcType=BIGINT},
+      serviceman_id = #{servicemanId,jdbcType=BIGINT},
+      remark = #{remark,jdbcType=VARCHAR},
+      state = #{state,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <resultMap id="customerColumnMap" type="com.decisioncustom.domain.TCustomer">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="mobile" jdbcType="BIGINT" property="mobile" />
+    <result column="wx_head_img" jdbcType="VARCHAR" property="wxHeadImg" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="from_user_name" jdbcType="VARCHAR" property="fromUserName" />
+    <result column="wechat_name" jdbcType="VARCHAR" property="wechatName" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="turn_on_time" jdbcType="TIMESTAMP" property="turnOnTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="register_time" jdbcType="TIMESTAMP" property="registerTime" />
+    <result column="input_man_id" jdbcType="BIGINT" property="inputManId" />
+    <result column="serviceman_id" jdbcType="BIGINT" property="servicemanId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="state" jdbcType="BIGINT" property="state" />
+    <association javaType="com.decisioncustom.domain.TEmployee" property="serviceMan">
+      <id column="employeeId" property="id" />
+      <result column="realName" property="realName" />
+      <result column="quick_mark" property="quickMark" />
+      <result column="phone_num" property="phoneNum" />
+      <result column="practice_num" property="practiceNum" />
+    </association>
+    <collection column="id" javaType="arrayList" ofType="com.decisioncustom.domain.TCustomerColumn"
+                property="customerColumns" select="com.decisioncustom.mapper.TCustomerColumnMapper.customerId_Column">
+    </collection>
+
+  </resultMap>
+
+
+  <resultMap id="customerMap" type="com.decisioncustom.domain.TCustomer">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="customer_name" jdbcType="VARCHAR" property="customerName" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="mobile" jdbcType="BIGINT" property="mobile" />
+    <result column="wx_head_img" jdbcType="VARCHAR" property="wxHeadImg" />
+    <result column="city" jdbcType="VARCHAR" property="city" />
+    <result column="province" jdbcType="VARCHAR" property="province" />
+    <result column="from_user_name" jdbcType="VARCHAR" property="fromUserName" />
+    <result column="wechat_name" jdbcType="VARCHAR" property="wechatName" />
+    <result column="wechat" jdbcType="VARCHAR" property="wechat" />
+    <result column="turn_on_time" jdbcType="TIMESTAMP" property="turnOnTime" />
+    <result column="end_time" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="register_time" jdbcType="TIMESTAMP" property="registerTime" />
+    <result column="input_man_id" jdbcType="BIGINT" property="inputManId" />
+    <result column="serviceman_id" jdbcType="BIGINT" property="servicemanId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="state" jdbcType="BIGINT" property="state" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    c.id , c.customer_name, c.id_card, c.password, c.real_name, c.age,c.wx_head_img,c.city,
+    c.gender, c.mobile, c.wechat_name, c.wechat, c.turn_on_time, c.end_time,c.province,
+    c.register_time, c.input_man_id, c.serviceman_id, c.remark, c.state,c.from_user_name
+  </sql>
+
+  <sql id="employee">
+    te.user_name employeeName,te.id  employeeId,te.real_name realName,te.quick_mark,te.phone_num,te.practice_num
+  </sql>
+  <sql id="whereSql">
+    <where>
+      <if test="q!=null and q!=''">
+        and  t_customer.real_name like concat('%',#{q},'%')
+      </if>
+      <if test="realName!=null and q!=''">
+        and  t_customer.real_name like concat('%',#{realName},'%')
+      </if>
+      <if test="team!=null">
+        and serviceMan.team= #{team}
+      </if>
+      <if test="customerId!=null">
+        and t_customer.id= #{customerId}
+      </if>
+      <if test="endTime!=null and endTime!=''">
+        and  end_time &gt;= #{endTime}
+      </if>
+      <if test="servicemanStr!=null and servicemanStr.length&gt;0">
+        AND serviceman_id IN
+        <foreach close=")" collection="servicemanStr" index="index" item="item" open="(" separator=",">
+          #{item}
+        </foreach>
+      </if>
+    </where>
+  </sql>
+
+  <sql id="CustomerById">
+    <where>
+      <if test="id!=null">
+        and c.id = #{id}
+      </if>
+    </where>
+  </sql>
+  <select id="selectAll" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    serviceMan.real_name serviceManName,
+    <include refid="Base_Column_List" />
+    from t_customer c
+    LEFT JOIN t_employee serviceMan ON c.serviceman_id = serviceMan.id
+    order by turn_on_time
+  </select>
+
+  <select id="getCustomerById" parameterType="com.decisioncustom.pojo.CustomerPojo" resultMap="customerColumnMap">
+    select
+    <include refid="Base_Column_List" />,
+    <include refid="employee" />
+    from t_customer c
+    LEFT JOIN t_employee te ON c.serviceman_id = te.id
+    <include refid="CustomerById" />
+  </select>
+
+  <!-- 根据用户名查询整个用户 -->
+  <select id="loginByCustomerName" parameterType="string" resultMap="customerMap">
+    select  * from t_customer where customer_name=#{customerName}
+  </select>
+
+  <!-- 根据微信查询整个用户 -->
+  <select id="loginByWeChat" parameterType="string" resultType="TCustomer">
+    select  * from t_customer where from_user_name=#{fromUserName}
+  </select>
+
+  <select id="getAllTCustomerByQuery" parameterType="com.decisioncustom.query.CustomerQuery" resultMap="BaseResultMap">
+    select
+    serviceMan.real_name serviceManName,inputMan.real_name inputManName,
+    <include refid="Base_Column_List" />
+    from t_customer c
+    LEFT JOIN t_employee serviceMan ON c.serviceman_id = serviceMan.id
+    LEFT JOIN t_employee inputMan   ON c.input_man_id =  inputMan.id
+    <include refid="whereSql" />
+    order by c.turn_on_time
+  </select>
+
+  <select id="getAllTCustomerById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    serviceMan.real_name serviceManName,inputMan.real_name inputManName,
+    <include refid="Base_Column_List" />
+    from t_customer c
+    LEFT JOIN t_employee serviceMan ON c.serviceman_id = serviceMan.id
+    LEFT JOIN t_employee inputMan   ON c.input_man_id =  inputMan.id
+    where c.serviceman_id = #{id,jdbcType=BIGINT}
+    order by c.turn_on_time
+  </select>
+
+  <select id="getAllTCustomerByTeam" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    serviceMan.real_name serviceManName,
+    <include refid="Base_Column_List" />
+    from t_customer c
+    LEFT JOIN t_employee serviceMan ON c.serviceman_id = serviceMan.id
+    where serviceMan.team = #{id,jdbcType=BIGINT}
+    order by c.turn_on_time
+  </select>
+
+
+
+  <!-- 通过t_operating_record_employee删除中间表数据 removeRecordEmployees -->
+  <delete id="removeCustomerEmployees" parameterType="java.lang.Long">
+    DELETE
+    FROM
+    t_customer_employee
+    WHERE
+    customer_id = #{id}
+  </delete>
+
+  <!-- 保存 saveRecordEmployees中间表关系 -->
+  <insert id="saveCustomerEmployees" parameterType="java.util.List">
+    insert into  t_customer_employee(customer_id,employee_id)
+    values
+    <foreach collection="list" index="index" item="item" separator=",">
+      (#{item.customerId},#{item.employeeId})
+    </foreach>
+  </insert>
+
+
+
+  <!-- 建表 -->
+  <select id="createTable">
+    CREATE TABLE IF NOT EXISTS `t_customer` (
+    `id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `name` varchar(40) DEFAULT NULL,
+    `gender` int(11) DEFAULT NULL,
+    `age` int(11) DEFAULT NULL,
+    `tel` varchar(50) DEFAULT NULL,
+    `email` varchar(50) DEFAULT NULL,
+    `qq` varchar(50) DEFAULT NULL,
+    `weChat` varchar(50) DEFAULT NULL,
+    `job_id` bigint(20) DEFAULT NULL,
+    `source_id` bigint(20) DEFAULT NULL,
+    `salaryLevel_id` bigint(20) DEFAULT NULL,
+    `seller_id` bigint(20) DEFAULT NULL,
+    `status` int(11) DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    KEY `job_id` (`job_id`),
+    KEY `source_id` (`source_id`),
+    KEY `salaryLevel_id` (`salaryLevel_id`),
+    KEY `seller_id` (`seller_id`),
+    CONSTRAINT `t_customer_ibfk_4` FOREIGN KEY (`seller_id`) REFERENCES `t_employee` (`id`),
+    CONSTRAINT `t_customer_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `t_systemdictionaryitem` (`id`),
+    CONSTRAINT `t_customer_ibfk_2` FOREIGN KEY (`source_id`) REFERENCES `t_systemdictionaryitem` (`id`),
+    CONSTRAINT `t_customer_ibfk_3` FOREIGN KEY (`salaryLevel_id`) REFERENCES `t_systemdictionaryitem` (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  </select>
+
+</mapper>

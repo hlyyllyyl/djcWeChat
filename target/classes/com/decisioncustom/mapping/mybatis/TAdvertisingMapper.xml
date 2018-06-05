@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TAdvertisingMapper">
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_advertising
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TAdvertising">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_advertising (img_path, ad_type, sequence,
+    ad_path, article_intro_details)
+    values (#{imgPath,jdbcType=VARCHAR}, #{adType,jdbcType=BIGINT}, #{sequence,jdbcType=BIGINT},
+    #{adPath,jdbcType=VARCHAR}, #{articleIntroDetails,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TAdvertising">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_advertising
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="imgPath != null">
+        img_path,
+      </if>
+      <if test="adType != null">
+        ad_type,
+      </if>
+      <if test="sequence != null">
+        sequence,
+      </if>
+      <if test="adPath != null">
+        ad_path,
+      </if>
+      <if test="articleIntroDetails != null">
+        article_intro_details,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="imgPath != null">
+        #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="adType != null">
+        #{adType,jdbcType=BIGINT},
+      </if>
+      <if test="sequence != null">
+        #{sequence,jdbcType=BIGINT},
+      </if>
+      <if test="adPath != null">
+        #{adPath,jdbcType=VARCHAR},
+      </if>
+      <if test="articleIntroDetails != null">
+        #{articleIntroDetails,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TAdvertising">
+    update t_advertising
+    <set>
+      <if test="imgPath != null">
+        img_path = #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="adType != null">
+        ad_type = #{adType,jdbcType=BIGINT},
+      </if>
+      <if test="sequence != null">
+        sequence = #{sequence,jdbcType=BIGINT},
+      </if>
+      <if test="adPath != null">
+        ad_path = #{adPath,jdbcType=VARCHAR},
+      </if>
+      <if test="articleIntroDetails != null">
+        article_intro_details = #{articleIntroDetails,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TAdvertising">
+    update t_advertising
+    set img_path = #{imgPath,jdbcType=VARCHAR},
+      ad_type = #{adType,jdbcType=BIGINT},
+      sequence = #{sequence,jdbcType=BIGINT},
+      ad_path = #{adPath,jdbcType=VARCHAR},
+      article_intro_details = #{articleIntroDetails,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TAdvertising">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="img_path" jdbcType="VARCHAR" property="imgPath" />
+    <result column="ad_type" jdbcType="BIGINT" property="adType" />
+    <result column="sequence" jdbcType="BIGINT" property="sequence" />
+    <result column="ad_path" jdbcType="VARCHAR" property="adPath" />
+    <result column="article_intro_details" jdbcType="VARCHAR" property="articleIntroDetails" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="advertisingType">
+      <result column="tName" property="name" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    ad.id, ad.img_path, ad.ad_type,ad.ad_path ,ad.sequence,ad.article_intro_details
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    t.name tName,
+    <include refid="Base_Column_List" />
+    from t_advertising ad
+    left join t_system_dictionary_item t on ad.ad_type = t.id
+    where ad.id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectAdByAdType" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    t.name tName,
+    <include refid="Base_Column_List" />
+    from t_advertising ad
+    left join t_system_dictionary_item t on ad.ad_type = t.id
+    where ad.ad_type = #{adType,jdbcType=BIGINT}
+    ORDER BY ad.sequence
+  </select>
+
+  <select id="selectAdByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    t.name tName,
+    <include refid="Base_Column_List" />
+    from t_advertising ad
+    left join t_system_dictionary_item t on ad.ad_type = t.id
+    where t.name = #{name,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectAll" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    t.name tName,
+    <include refid="Base_Column_List" />
+    from t_advertising ad
+    left join t_system_dictionary_item t on ad.ad_type = t.id
+    ORDER BY ad.sequence
+  </select>
+
+</mapper>

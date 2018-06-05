@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.decisioncustom.mapper.TCustomerComplainMapper" >
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TCustomerComplain" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="handle_time" property="handleTime" jdbcType="TIMESTAMP" />
+    <result column="customer_id" property="customerId" jdbcType="BIGINT" />
+    <result column="complain_type_id" property="complainTypeId" jdbcType="BIGINT" />
+    <result column="company_id" property="companyId" jdbcType="BIGINT" />
+    <result column="complain_reason_id" property="complainReasonId" jdbcType="BIGINT" />
+    <result column="complain_reason_detail_id" property="complainReasonDetailId" jdbcType="BIGINT" />
+    <result column="transfer_id" property="transferId" jdbcType="BIGINT" />
+    <result column="tracking_process" property="trackingProcess" jdbcType="VARCHAR" />
+    <result column="processing_results_id" property="processingResultsId" jdbcType="BIGINT" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="complain_source_id" property="complainSourceId" jdbcType="BIGINT" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="complainType">
+      <id column="complainTypeId" property="id" />
+      <result column="complainTypeName" property="name" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="complainReason">
+      <id column="complainReasonId" property="id" />
+      <result column="complainReasonName" property="name" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="processingResults">
+      <id column="processingResultsId" property="id" />
+      <result column="processingResultsName" property="name" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="complainSource">
+      <id column="complainSourceId" property="id" />
+      <result column="complainSourceName" property="name" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TEmployee" property="transfer">
+      <result column="transferName" property="realName" />
+      <association property="transferCompany" javaType="com.decisioncustom.domain.TSystemDictionaryItem">
+        <result column="transferCompanyId" property="id" />
+        <result column="transferCompanyName" property="name" />
+      </association>
+    </association>
+    <!--客户信息  关联公司.客服-->
+    <association javaType="com.decisioncustom.domain.TCustomer" property="customer">
+      <result column="customerName" property="realName" />
+      <result column="payment" property="payment" />
+      <result column="turn_on_time" property="turnOnTime" />
+      <result column="end_time" property="endTime" />
+        <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="customerCompany">
+          <id column="customerCompanyId" property="id" />
+          <result column="customerCompanyName" property="name" />
+        </association>
+        <association property="serviceMan" javaType="com.decisioncustom.domain.TEmployee">
+          <result column="serviceManName" property="realName" />
+        </association>
+    </association>
+    <!--客户投诉咨询事由-->
+    <association javaType="com.decisioncustom.domain.TCustomerComplainText" property="complainReasonDetail">
+      <result column="complain_reason_detail" property="complainReasonDetail" />
+    </association>
+  </resultMap>
+  <resultMap id="CustomerCompanyPojoMap" type="com.decisioncustom.pojo.CustomerCompanyPojo" >
+    <result column="companyName" property="companyName" jdbcType="VARCHAR" />
+    <result column="ct" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="mt" jdbcType="TIMESTAMP" property="createTimeM" />
+    <result column="outside" property="outside" jdbcType="BIGINT" />
+    <result column="inside" property="inside" jdbcType="BIGINT" />
+    <result column="loss" property="loss" jdbcType="BIGINT" />
+    <result column="notContact" property="notContact" jdbcType="BIGINT" />
+    <result column="lossNotContact" property="lossNotContact" jdbcType="BIGINT" />
+    <result column="serviceDissatisfaction" property="serviceDissatisfaction" jdbcType="BIGINT" />
+    <result column="notCompact" property="notCompact" jdbcType="BIGINT" />
+    <result column="badAttitude" property="badAttitude" jdbcType="BIGINT" />
+    <result column="notWant" property="notWant" jdbcType="BIGINT" />
+    <result column="disapprovingProduct" property="disapprovingProduct" jdbcType="BIGINT" />
+    <result column="seekRedress" property="seekRedress" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    t_customer_complain.id, create_time, handle_time, customer_id,complain_type_id, t_customer_complain.company_id,
+    complain_reason_id, complain_reason_detail_id, transfer_id, tracking_process, processing_results_id, 
+    remarks, complain_source_id
+  </sql>
+  <sql id="whereSql">
+    <where>
+      <if test="realName!=null and realName!=''">
+        and  customer.real_name like concat('%',#{realName},'%')
+      </if>
+      <if test="serviceManName!=null and serviceManName!=''">
+        and  serviceMan.real_name like concat('%',#{serviceManName},'%')
+      </if>
+      <if test="complainTypeId!=null">
+        and complain_type_id= #{complainTypeId}
+      </if>
+      <if test="companyId!=null">
+        and customer.company_id= #{companyId}
+      </if>
+      <if test="complainReasonId!=null">
+        and complain_reason_id= #{complainReasonId}
+      </if>
+      <if test="processingResultsId!=null">
+        and processing_results_id= #{processingResultsId}
+      </if>
+      <if test="complainSourceId!=null">
+        and complain_source_id= #{complainSourceId}
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_customer_complain
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select DISTINCT customer.real_name customerName,customer.turn_on_time,customer.end_time,transfer.real_name transferName,
+    complainType.name complainTypeName,customerCompany.name customerCompanyName,complainReason.name complainReasonName,
+    transferCompany.name transferCompanyName,customer.payment,serviceMan.real_name serviceManName,
+    processingResults.name processingResultsName,complainSource.name complainSourceName,text.complain_reason_detail,
+    <include refid="Base_Column_List" />
+    from t_customer_complain
+    LEFT JOIN t_customer customer ON t_customer_complain.customer_id = customer.id
+    LEFT JOIN t_employee transfer ON t_customer_complain.transfer_id = transfer.id
+    LEFT JOIN t_employee serviceMan ON customer.serviceman_id = serviceMan.id
+    LEFT JOIN t_system_dictionary_item transferCompany ON transfer.company_id = transferCompany.id
+    LEFT JOIN t_customer_complain_text text ON t_customer_complain.complain_reason_detail_id = text.id
+    LEFT JOIN t_system_dictionary_item complainType ON t_customer_complain.complain_type_id = complainType.id
+    LEFT JOIN t_system_dictionary_item customerCompany ON customer.company_id = customerCompany.id
+    LEFT JOIN t_system_dictionary_item complainReason ON t_customer_complain.complain_reason_id = complainReason.id
+    LEFT JOIN t_system_dictionary_item processingResults ON t_customer_complain.processing_results_id = processingResults.id
+    LEFT JOIN t_system_dictionary_item complainSource ON t_customer_complain.complain_source_id = complainSource.id
+    LEFT JOIN t_customer_complain_employee o ON o.customer_complain_id = t_customer_complain.id
+    ORDER BY create_time DESC
+  </select>
+  <select id="selectCountByDay" resultMap="CustomerCompanyPojoMap" parameterType="java.lang.String">
+    SELECT
+        customerCompany.`name` companyName,date_format(create_time,'%Y-%m-%d') ct,
+		COUNT(CASE  WHEN c.complain_type_id IN ('7') THEN '' END)'inside',
+        COUNT(CASE  WHEN c.complain_type_id IN ('8') THEN '' END)'outside',
+		COUNT(CASE  WHEN c.complain_reason_id IN ('17') THEN '' END)'loss',
+		COUNT(CASE  WHEN c.complain_type_id IN ('18') THEN '' END)'notContact',
+		COUNT(CASE  WHEN c.complain_type_id IN ('19') THEN '' END)'lossNotContact',
+		COUNT(CASE  WHEN c.complain_type_id IN ('20') THEN '' END)'serviceDissatisfaction',
+		COUNT(CASE  WHEN c.complain_reason_id IN ('21') THEN '' END)'notCompact',
+		COUNT(CASE  WHEN c.complain_type_id IN ('22') THEN '' END)'badAttitude',
+		COUNT(CASE  WHEN c.complain_type_id IN ('23') THEN '' END)'notWant',
+		COUNT(CASE  WHEN c.complain_type_id IN ('24') THEN '' END)'disapprovingProduct',
+		COUNT(CASE  WHEN c.complain_type_id IN ('25') THEN '' END)'seekRedress'
+    from t_customer_complain  c
+    LEFT JOIN t_customer customer ON c.customer_id = customer.id
+    LEFT JOIN t_employee transfer ON c.transfer_id = transfer.id
+    LEFT JOIN t_employee serviceMan ON customer.serviceman_id = serviceMan.id
+    LEFT JOIN t_system_dictionary_item transferCompany ON transfer.company_id = transferCompany.id
+    LEFT JOIN t_customer_complain_text text ON c.complain_reason_detail_id = text.id
+    LEFT JOIN t_system_dictionary_item complainType ON c.complain_type_id = complainType.id
+    LEFT JOIN t_system_dictionary_item customerCompany ON customer.company_id = customerCompany.id
+    LEFT JOIN t_system_dictionary_item complainReason ON c.complain_reason_id = complainReason.id
+    LEFT JOIN t_system_dictionary_item processingResults ON c.processing_results_id = processingResults.id
+    LEFT JOIN t_system_dictionary_item complainSource ON c.complain_source_id = complainSource.id
+    LEFT JOIN t_customer_complain_employee o ON o.customer_complain_id = c.id
+    GROUP BY customer.company_id,ct
+    HAVING ct = #{ct}
+  </select>
+  <select id="selectCountByMonth" resultMap="CustomerCompanyPojoMap" parameterType="java.lang.String">
+    SELECT
+    customerCompany.`name` companyName,date_format(create_time,'%Y-%m-%d') mt,
+    COUNT(CASE  WHEN c.complain_type_id IN ('7') THEN '' END)'inside',
+    COUNT(CASE  WHEN c.complain_type_id IN ('8') THEN '' END)'outside',
+    COUNT(CASE  WHEN c.complain_reason_id IN ('17') THEN '' END)'loss',
+    COUNT(CASE  WHEN c.complain_type_id IN ('18') THEN '' END)'notContact',
+    COUNT(CASE  WHEN c.complain_type_id IN ('19') THEN '' END)'lossNotContact',
+    COUNT(CASE  WHEN c.complain_type_id IN ('20') THEN '' END)'serviceDissatisfaction',
+    COUNT(CASE  WHEN c.complain_reason_id IN ('21') THEN '' END)'notCompact',
+    COUNT(CASE  WHEN c.complain_type_id IN ('22') THEN '' END)'badAttitude',
+    COUNT(CASE  WHEN c.complain_type_id IN ('23') THEN '' END)'notWant',
+    COUNT(CASE  WHEN c.complain_type_id IN ('24') THEN '' END)'disapprovingProduct',
+    COUNT(CASE  WHEN c.complain_type_id IN ('25') THEN '' END)'seekRedress'
+    from t_customer_complain  c
+    LEFT JOIN t_customer customer ON c.customer_id = customer.id
+    LEFT JOIN t_employee transfer ON c.transfer_id = transfer.id
+    LEFT JOIN t_employee serviceMan ON customer.serviceman_id = serviceMan.id
+    LEFT JOIN t_system_dictionary_item transferCompany ON transfer.company_id = transferCompany.id
+    LEFT JOIN t_customer_complain_text text ON c.complain_reason_detail_id = text.id
+    LEFT JOIN t_system_dictionary_item complainType ON c.complain_type_id = complainType.id
+    LEFT JOIN t_system_dictionary_item customerCompany ON customer.company_id = customerCompany.id
+    LEFT JOIN t_system_dictionary_item complainReason ON c.complain_reason_id = complainReason.id
+    LEFT JOIN t_system_dictionary_item processingResults ON c.processing_results_id = processingResults.id
+    LEFT JOIN t_system_dictionary_item complainSource ON c.complain_source_id = complainSource.id
+    LEFT JOIN t_customer_complain_employee o ON o.customer_complain_id = c.id
+    GROUP BY customer.company_id
+    HAVING mt like concat('%',#{mt},'%')
+  </select>
+  <select id="getAllComplainByQuery" resultMap="BaseResultMap" parameterType="com.decisioncustom.query.CustomerComplainQuery">
+    select DISTINCT customer.real_name customerName,customer.turn_on_time,customer.end_time,transfer.real_name transferName,
+    complainType.name complainTypeName,customerCompany.name customerCompanyName,complainReason.name complainReasonName,
+    transferCompany.name transferCompanyName,customer.payment,serviceMan.real_name serviceManName,
+    processingResults.name processingResultsName,complainSource.name complainSourceName,text.complain_reason_detail,
+    <include refid="Base_Column_List" />
+    from t_customer_complain
+    LEFT JOIN t_customer customer ON t_customer_complain.customer_id = customer.id
+    LEFT JOIN t_employee transfer ON t_customer_complain.transfer_id = transfer.id
+    LEFT JOIN t_employee serviceMan ON customer.serviceman_id = serviceMan.id
+    LEFT JOIN t_system_dictionary_item transferCompany ON transfer.company_id = transferCompany.id
+    LEFT JOIN t_customer_complain_text text ON t_customer_complain.complain_reason_detail_id = text.id
+    LEFT JOIN t_system_dictionary_item complainType ON t_customer_complain.complain_type_id = complainType.id
+    LEFT JOIN t_system_dictionary_item customerCompany ON customer.company_id = customerCompany.id
+    LEFT JOIN t_system_dictionary_item complainReason ON t_customer_complain.complain_reason_id = complainReason.id
+    LEFT JOIN t_system_dictionary_item processingResults ON t_customer_complain.processing_results_id = processingResults.id
+    LEFT JOIN t_system_dictionary_item complainSource ON t_customer_complain.complain_source_id = complainSource.id
+    LEFT JOIN t_customer_complain_employee o ON o.customer_complain_id = t_customer_complain.id
+    <include refid="whereSql" />
+    ORDER BY create_time DESC
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_customer_complain
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TCustomerComplain" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_customer_complain (create_time, handle_time, customer_id, 
+      complain_type_id, company_id,
+      complain_reason_id, complain_reason_detail_id, 
+      transfer_id, tracking_process, processing_results_id, 
+      remarks, complain_source_id)
+    values (#{createTime,jdbcType=TIMESTAMP}, #{handleTime,jdbcType=TIMESTAMP}, #{customerId,jdbcType=BIGINT}, 
+      #{complainTypeId,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT},
+      #{complainReasonId,jdbcType=BIGINT}, #{complainReasonDetailId,jdbcType=BIGINT}, 
+      #{transferId,jdbcType=BIGINT}, #{trackingProcess,jdbcType=VARCHAR}, #{processingResultsId,jdbcType=BIGINT}, 
+      #{remarks,jdbcType=VARCHAR}, #{complainSourceId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TCustomerComplain" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_customer_complain
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="handleTime != null" >
+        handle_time,
+      </if>
+      <if test="customerId != null" >
+        customer_id,
+      </if>
+      <if test="complainTypeId != null" >
+        complain_type_id,
+      </if>
+      <if test="companyId != null" >
+        company_id,
+      </if>
+      <if test="complainReasonId != null" >
+        complain_reason_id,
+      </if>
+      <if test="complainReasonDetailId != null" >
+        complain_reason_detail_id,
+      </if>
+      <if test="transferId != null" >
+        transfer_id,
+      </if>
+      <if test="trackingProcess != null" >
+        tracking_process,
+      </if>
+      <if test="processingResultsId != null" >
+        processing_results_id,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="complainSourceId != null" >
+        complain_source_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="handleTime != null" >
+        #{handleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null" >
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="complainTypeId != null" >
+        #{complainTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="complainReasonId != null" >
+        #{complainReasonId,jdbcType=BIGINT},
+      </if>
+      <if test="complainReasonDetailId != null" >
+        #{complainReasonDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="transferId != null" >
+        #{transferId,jdbcType=BIGINT},
+      </if>
+      <if test="trackingProcess != null" >
+        #{trackingProcess,jdbcType=VARCHAR},
+      </if>
+      <if test="processingResultsId != null" >
+        #{processingResultsId,jdbcType=BIGINT},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="complainSourceId != null" >
+        #{complainSourceId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TCustomerComplain" >
+    update t_customer_complain
+    <set >
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="handleTime != null" >
+        handle_time = #{handleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="customerId != null" >
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="complainTypeId != null" >
+        complain_type_id = #{complainTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null" >
+        company_id = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="complainReasonId != null" >
+        complain_reason_id = #{complainReasonId,jdbcType=BIGINT},
+      </if>
+      <if test="complainReasonDetailId != null" >
+        complain_reason_detail_id = #{complainReasonDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="transferId != null" >
+        transfer_id = #{transferId,jdbcType=BIGINT},
+      </if>
+      <if test="trackingProcess != null" >
+        tracking_process = #{trackingProcess,jdbcType=VARCHAR},
+      </if>
+      <if test="processingResultsId != null" >
+        processing_results_id = #{processingResultsId,jdbcType=BIGINT},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="complainSourceId != null" >
+        complain_source_id = #{complainSourceId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TCustomerComplain" >
+    update t_customer_complain
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      handle_time = #{handleTime,jdbcType=TIMESTAMP},
+      customer_id = #{customerId,jdbcType=BIGINT},
+      complain_type_id = #{complainTypeId,jdbcType=BIGINT},
+      company_id = #{companyId,jdbcType=BIGINT},
+      complain_reason_id = #{complainReasonId,jdbcType=BIGINT},
+      complain_reason_detail_id = #{complainReasonDetailId,jdbcType=BIGINT},
+      transfer_id = #{transferId,jdbcType=BIGINT},
+      tracking_process = #{trackingProcess,jdbcType=VARCHAR},
+      processing_results_id = #{processingResultsId,jdbcType=BIGINT},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      complain_source_id = #{complainSourceId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <!-- 通过t_operating_record_employee删除中间表数据 removeRecordEmployees -->
+  <delete id="removeComplainEmployees" parameterType="java.lang.Long">
+    DELETE
+    FROM
+    t_customer_complain_employee
+    WHERE
+    customer_complain_id = #{id}
+  </delete>
+
+  <!-- 保存 saveRecordEmployees中间表关系 -->
+  <insert id="saveRecordEmployees" parameterType="java.util.List">
+    insert into  t_customer_complain_employee(customer_complain_id,employee_id)
+    values
+    <foreach item="item" index="index" collection="list"
+             separator="," >
+      (#{item.customerComplainId},#{item.employeeId})
+    </foreach>
+  </insert>
+</mapper>

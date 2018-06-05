@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TVideoMapper">
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_video
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TVideo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_video (teacher_id, title, thumbnail_path, 
+      video_duration, video_path, video_intro_details, 
+      creation_time, column_id, top, 
+      play_quantity, thumb_up_quantity, tag, 
+      audit_id, audit_remark, audit_time, 
+      state)
+    values (#{teacherId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{thumbnailPath,jdbcType=VARCHAR}, 
+      #{videoDuration,jdbcType=VARCHAR}, #{videoPath,jdbcType=VARCHAR}, #{videoIntroDetails,jdbcType=VARCHAR}, 
+      #{creationTime,jdbcType=TIMESTAMP}, #{columnId,jdbcType=BIGINT}, #{top,jdbcType=INTEGER}, 
+      #{playQuantity,jdbcType=BIGINT}, #{thumbUpQuantity,jdbcType=BIGINT}, #{tag,jdbcType=VARCHAR}, 
+      #{auditId,jdbcType=BIGINT}, #{auditRemark,jdbcType=VARCHAR}, #{auditTime,jdbcType=TIMESTAMP}, 
+      #{state,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TVideo">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_video
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="thumbnailPath != null">
+        thumbnail_path,
+      </if>
+      <if test="videoDuration != null">
+        video_duration,
+      </if>
+      <if test="videoPath != null">
+        video_path,
+      </if>
+      <if test="videoIntroDetails != null">
+        video_intro_details,
+      </if>
+      <if test="creationTime != null">
+        creation_time,
+      </if>
+      <if test="columnId != null">
+        column_id,
+      </if>
+      <if test="top != null">
+        top,
+      </if>
+      <if test="playQuantity != null">
+        play_quantity,
+      </if>
+      <if test="thumbUpQuantity != null">
+        thumb_up_quantity,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="auditId != null">
+        audit_id,
+      </if>
+      <if test="auditRemark != null">
+        audit_remark,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailPath != null">
+        #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="videoDuration != null">
+        #{videoDuration,jdbcType=VARCHAR},
+      </if>
+      <if test="videoPath != null">
+        #{videoPath,jdbcType=VARCHAR},
+      </if>
+      <if test="videoIntroDetails != null">
+        #{videoIntroDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="columnId != null">
+        #{columnId,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        #{top,jdbcType=INTEGER},
+      </if>
+      <if test="playQuantity != null">
+        #{playQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="thumbUpQuantity != null">
+        #{thumbUpQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="auditId != null">
+        #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="auditRemark != null">
+        #{auditRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TVideo">
+    update t_video
+    <set>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="thumbnailPath != null">
+        thumbnail_path = #{thumbnailPath,jdbcType=VARCHAR},
+      </if>
+      <if test="videoDuration != null">
+        video_duration = #{videoDuration,jdbcType=VARCHAR},
+      </if>
+      <if test="videoPath != null">
+        video_path = #{videoPath,jdbcType=VARCHAR},
+      </if>
+      <if test="videoIntroDetails != null">
+        video_intro_details = #{videoIntroDetails,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="columnId != null">
+        column_id = #{columnId,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        top = #{top,jdbcType=INTEGER},
+      </if>
+      <if test="playQuantity != null">
+        play_quantity = #{playQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="thumbUpQuantity != null">
+        thumb_up_quantity = #{thumbUpQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="tag != null">
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="auditId != null">
+        audit_id = #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="auditRemark != null">
+        audit_remark = #{auditRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TVideo">
+    update t_video
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      thumbnail_path = #{thumbnailPath,jdbcType=VARCHAR},
+      video_duration = #{videoDuration,jdbcType=VARCHAR},
+      video_path = #{videoPath,jdbcType=VARCHAR},
+      video_intro_details = #{videoIntroDetails,jdbcType=VARCHAR},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      column_id = #{columnId,jdbcType=BIGINT},
+      top = #{top,jdbcType=INTEGER},
+      play_quantity = #{playQuantity,jdbcType=BIGINT},
+      thumb_up_quantity = #{thumbUpQuantity,jdbcType=BIGINT},
+      tag = #{tag,jdbcType=VARCHAR},
+      audit_id = #{auditId,jdbcType=BIGINT},
+      audit_remark = #{auditRemark,jdbcType=VARCHAR},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TVideo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="thumbnail_path" jdbcType="VARCHAR" property="thumbnailPath" />
+    <result column="video_duration" jdbcType="VARCHAR" property="videoDuration" />
+    <result column="video_path" jdbcType="VARCHAR" property="videoPath" />
+    <result column="video_intro_details" jdbcType="VARCHAR" property="videoIntroDetails" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="column_id" jdbcType="BIGINT" property="columnId" />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="play_quantity" jdbcType="BIGINT" property="playQuantity" />
+    <result column="thumb_up_quantity" jdbcType="BIGINT" property="thumbUpQuantity" />
+    <result column="tag" jdbcType="VARCHAR" property="tag" />
+    <result column="audit_id" jdbcType="BIGINT" property="auditId" />
+    <result column="audit_remark" jdbcType="VARCHAR" property="auditRemark" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="employee">
+      <result column="teacherName" property="realName" />
+      <result column="headImg" property="headImg" />
+      <result column="employeeDetails" property="employeeDetails" />
+      <result column="tReadingQuantity" property="readingQuantity" />
+      <result column="tThumbUpQuantity" property="thumbUpQuantity" />
+      <result column="tPracticeNum" property="practiceNum" />
+      <result column="disclaimer" property="disclaimer" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TColumn" property="column">
+      <result column="cName" property="name" />
+      <result column="nameRemark" property="nameRemark" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List">
+    v.id, v.teacher_id, v.title,v.thumbnail_path, v.video_duration,v.video_path, v.video_intro_details, v.creation_time, v.column_id,
+    v.top, v.play_quantity, v.thumb_up_quantity,v.audit_id,v.tag,v.audit_remark, v.audit_time, v.state
+  </sql>
+
+  <sql id="whereSql">
+    <where>
+      <if test="tags!=null and tags.length&gt;0">
+        <foreach collection="tags" item="item" index="index" separator="or">
+          v.tag like '%${item}%'
+        </foreach>
+      </if>
+      <if test="title!=null and title!=''">
+        and  v.title like concat('%',#{title},'%')
+      </if>
+      <if test="teacherName!=null and teacherName!=''">
+        and  teacher.real_name like concat('%',#{teacherName},'%')
+      </if>
+      <if test="teacherId!=null">
+        and v.teacher_id= #{teacherId}
+      </if>
+      <if test="state!=null">
+        and v.state= #{state}
+      </if>
+      <if test="state==null">
+        and v.state != 2
+      </if>
+      <if test="columnId!=null">
+        and v.column_id= #{columnId}
+      </if>
+    </where>
+  </sql>
+  <sql id="Teacher_Column_List">
+    t.head_img headImg,t.real_name teacherName,t.employee_details employeeDetails,
+    t.reading_quantity tReadingQuantity,t.thumb_up_quantity tThumbUpQuantity,t.practice_num tPracticeNum,t.disclaimer
+  </sql>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select  teacher.real_name teacherName,c.name cName,c.name_remark,auditMan.real_name auditManName,
+    <include refid="Base_Column_List" />
+    from t_video v
+    LEFT JOIN t_employee teacher ON v.teacher_id = teacher.id
+    LEFT JOIN t_employee auditMan ON v.audit_id = auditMan.id
+    LEFT JOIN t_column  c ON v.column_id = c.id
+  </select>
+  <!--根据条件查询视频-->
+  <select id="getVideoByQuery" parameterType="com.decisioncustom.query.ArticleQuery" resultMap="BaseResultMap">
+    select teacher.real_name teacherName,c.name_remark cName,auditMan.real_name auditManName,
+    <include refid="Base_Column_List" />
+    from t_video v
+    LEFT JOIN t_employee teacher ON v.teacher_id = teacher.id
+    LEFT JOIN t_employee auditMan ON v.audit_id = auditMan.id
+    LEFT JOIN t_column  c ON v.column_id = c.id
+    <include refid="whereSql" />
+    ORDER by v.top DESC, v.id Desc
+  </select>
+
+  <!--根据栏目查询文章-->
+  <select id="getVideoByColumn" parameterType="com.decisioncustom.query.ArticleQuery" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_video v
+    where v.column_id = #{columnId,jdbcType=BIGINT} AND v.state=0
+    ORDER by v.top DESC, v.id Desc
+  </select>
+
+  <!--查询置顶视频数量-->
+  <select id="selectTopNum" parameterType="java.lang.Long" resultType="java.lang.Long">
+    select
+    COUNT(*)
+    from t_video v
+    where v.column_id=#{columnId,jdbcType=BIGINT} and v.top=1
+  </select>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select  c.name cName,c.name_remark,
+    <include refid="Base_Column_List" />,
+    <include refid="Teacher_Column_List" />
+    from t_video v
+    LEFT JOIN t_employee t ON v.teacher_id = t.id
+    LEFT JOIN t_column  c ON v.column_id = c.id
+    where v.id = #{id,jdbcType=BIGINT}
+  </select>
+</mapper>

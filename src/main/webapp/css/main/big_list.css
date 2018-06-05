@@ -1,0 +1,86 @@
+/* 
+2018.5.29
+*/
+body{
+    background-color: #efeff4;
+}
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.liulan_da{
+    color: #8f8f94;
+    text-align: right;
+}
+.liulan_da img{
+    width:12px;
+    height:8px;
+}
+.dianZhan_da a{
+    color: #8f8f94;
+    text-align: right;
+}
+.dianZhan_da a img{
+    width:12px;
+    height:8px;
+}
+.title-txt{
+    padding-top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color:#000;
+    text-align: center;
+    max-height: 53px;
+    margin-bottom:8px;
+    line-height: 25px;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+#thelist .bigImg{
+    /* margin: 10px 15px -2px 15px; */
+    background: #f4f4f4;
+    /* border-radius: 6px; */
+    /* margin-top: 93px; */
+}
+.p_width{
+    width: 100%;
+    display:inline-block;
+    text-align: right;
+    color:#999;
+    font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 6px;
+}
+.big_p{
+    font-size:14px;
+    color:#999;
+    /*height: 48px;*/
+    margin-top: 5px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.mui-card-content img{
+    width: 100%;
+    height:180px;
+}
+.mui-card2{
+    background: #fff;margin:10px;
+}
+.textConter {
+     /* margin-top: 71px; */
+     background: #f4f4f4;
+}
+.dianZhan_da{
+    margin-left: 10px;
+}
+#thelist{
+    overflow:hidden;
+    background:#fff;
+}

@@ -1,0 +1,400 @@
+.mui-preview-image.mui-fullscreen {
+    position: fixed;
+    z-index: 20;
+    background-color: #000;
+}
+
+.mui-preview-header,
+.mui-preview-footer {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+}
+
+.mui-preview-header {
+    height: 44px;
+    top: 0;
+}
+
+.mui-preview-footer {
+    height: 50px;
+    bottom: 0px;
+}
+
+.mui-preview-header .mui-preview-indicator {
+    display: block;
+    line-height: 25px;
+    color: #fff;
+    text-align: center;
+    margin: 15px auto 4px;
+    width: 70px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.mui-preview-image {
+    display: none;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.mui-preview-image.mui-preview-in {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+.mui-preview-image.mui-preview-out {
+    background: none;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+}
+
+.mui-preview-image.mui-preview-out .mui-preview-header,
+.mui-preview-image.mui-preview-out .mui-preview-footer {
+    display: none;
+}
+
+.mui-zoom-scroller {
+    position: absolute;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+}
+
+.mui-zoom {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.mui-slider .mui-slider-group .mui-slider-item img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+    width: 100%;
+}
+
+.mui-android-4-1
+.mui-slider.mui-preview-image
+.mui-slider-group
+.mui-slider-item {
+    display: inline-table;
+}
+
+.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.mui-preview-loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.mui-preview-loading.mui-active {
+    display: block;
+}
+
+.mui-preview-loading .mui-spinner-white {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    height: 50px;
+    width: 50px;
+}
+
+.mui-preview-image img.mui-transitioning {
+    -webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+p img {
+    max-width: 100%;
+    height: auto;
+}
+
+.mun {
+    color: #8f8f94;
+}
+.liulan {
+    display: inline-block;
+    text-align: right;
+}
+.liulan2 {
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    font-size: 10px;
+}
+.liulan2 img {
+    height: 8px;
+    width: 12px;
+}
+.liulan_da img {
+    height: 8px;
+    width: 12px;
+}
+.title-txt {
+    text-align: center;
+    width: 100%;
+    color: #000;
+}
+.chaochu {
+    text-overflow: ellipsis;
+    font-size:12px;
+    line-height: 14.2px;
+}
+.right-3 {
+    font-size: 12px;
+    /* margin-left: 0px; */
+    display: inline-block;
+    margin-top: 5px;
+    text-align: right;
+    width: 100%;
+}
+.title_t {
+    font-weight: bold;
+    font-size: 16px;
+    color: #000;
+    text-overflow: ellipsis;
+    height: 22px;
+    overflow: hidden;
+    /*margin-top: 149px;*/
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.jianjie_t {
+    font-size: 10px;
+    color: #999;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    /* height:13px;
+      overflow: hidden; */
+
+}
+.daTu{
+    background: #fff;
+    padding: 0 15px 15px 15px;
+}
+.zt_2{
+    font-size:14px;
+    /* display: block; */
+    overflow: hidden;
+    padding: inherit;
+    line-height: 14px;
+    margin-top: 5px;
+    max-height:34px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    font-size: 12px;
+}
+.gaodu_1{
+    background: #fff;
+}
+.liulan_da{
+    display: inline-block;
+    text-align: right;
+    font-size:10px;
+    width:67%;
+}
+.dianZhan_da{
+    display: inline-block;
+    text-align: right;
+    font-size:10px;
+
+}
+.dianZhan_da img{
+    width:12px;
+    height:8px;
+}
+.dianZhan_da a{
+    color:#999;
+}
+.p_width{
+    width:100%;
+}
+.p_width2{
+    width:100%;
+    line-height: 16px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    overflow: hidden;
+}
+
+.mui-card-content img {
+    max-height: 140px;
+    border: 1px solid #999;
+}
+
+.dianZhan img{
+    width: 12px;
+    height:8px;
+}
+.dianZhan a{
+    color:#999;
+}
+.xiaomb {
+    font-size: 12px;
+    text-align: right;
+    margin-left: 0px;
+    display: inline-block;
+    /* position: relative; */
+    /* top: 5px; */
+    /* left: 54px; */
+    width: 71%;
+}
+.small_dt{
+    /* border-bottom: 15px solid #999; */
+    /* border-radius: 4px; */
+    margin-bottom: 10px;
+}
+.small_xt{
+    font-size:15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.mui-ellipsis {
+    /* overflow: hidden; */
+    /* white-space: nowrap; */
+    /* text-overflow: ellipsis; */
+    /* margin-top: 5px; */
+}
+.mui-table-view .mui-media-object {
+    line-height: 60px;
+    min-width: 60px;
+    height: 60px;
+    border: 1px solid #999;
+}
+.time,
+.liuLan,
+.dianZhan {
+    font-size: 10px;
+    display: inline-block;
+    color: #999;
+}
+
+.liuLan img {
+    width: 12px;
+    height: 8px;
+    display: inline-block;
+}
+.dianZhan{
+    margin-left: 10px;
+}
+.dianZhan img {
+    width: 12px;
+    height: 8px;;
+    display: inline-block;
+}
+.dianZhan a{
+    color:#999;
+}
+.mui-table-view {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    background-color: #fff;
+    margin: 15px;
+    /* padding: 15px; */
+}
+.mui-table-view li:nth-child(1) {
+    height: 300px;
+    border-bottom: 16px solid #EFEFF4;
+}
+.mui-table-view li{
+    padding:15px;
+}
+.time{
+    float:left;
+}
+.right-txt {
+    display: block;
+    overflow: hidden;
+    padding: inherit;
+    line-height: 14px;
+    margin-top: 5px;
+    max-height: 34px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    font-size: 12px;
+}

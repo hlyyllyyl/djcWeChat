@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<!-- 扫描Activiti的Listener -->
+   	<context:component-scan base-package="com.decisioncustom.activiti.listener"></context:component-scan>
+   <!-- 配置Activiti核心对象:引擎配置对象,引擎对象,三大服务对象 -->
+   
+	<!-- 配置流程引擎配置对象 -->
+	<bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+		<!-- 数据源中就包含四大数据库配置信息 -->
+		<property name="dataSource" ref="dataSource" />
+		<!-- 把事务交给spring管理 -->
+		<property name="transactionManager" ref="transactionManager" />
+		<!-- 建表策略 -->
+		<property name="databaseSchemaUpdate" value="true" />
+	</bean>
+
+
+  <!-- 通过流程配置引擎对象创建流程引擎对象 -->
+  <bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+    <property name="processEngineConfiguration" ref="processEngineConfiguration" />
+  </bean>
+
+
+  <!-- 配置三大服务对象 
+  -->
+  <bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService" />
+  <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService" />
+  <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService" />
+  <bean id="formService" factory-bean="processEngine" factory-method="getFormService" />
+    
+</beans>

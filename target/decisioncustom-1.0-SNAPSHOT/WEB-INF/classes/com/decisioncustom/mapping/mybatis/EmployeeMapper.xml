@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.EmployeeMapper">
+
+
+	<!-- 查询全部 -->
+	<select id="getAll" resultType="Employee">
+		select * from
+		t_employee
+	</select>
+
+
+
+	<!-- 查询一个 -->
+	<select id="getOne" parameterType="long" resultType="Employee">
+		select *
+		from t_employee where id = #{id}
+	</select>
+
+	<!-- 根据部门查询员工 -->
+	<select id="getEmployeeByDept" parameterType="long" resultType="Employee">
+		select *
+		from t_employee where department = #{id}
+	</select>
+
+
+	<!-- 保存一个 -->
+	<insert id="save" parameterType="Employee" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into
+		t_employee(username,realname,password,head_img,tel,email,team,isTeamLeader,inputTime,state,employee_details,department)
+		values(#{username},#{realname},#{password},#{headImg},#{tel},#{email},
+				#{team},#{isTeamLeader},#{inputTime},#{state},#{employeeDetails},#{department.id})
+	</insert>
+
+
+	<!-- 删除一个 -->
+	<delete id="remove" parameterType="long">
+		delete from t_employee where
+		id = #{id}
+	</delete>
+
+	<!-- 修改一个数据 -->
+	<update id="update" parameterType="Employee">
+		update t_employee set
+		username=#{username},
+		realname=#{realname},password=#{password},
+		head_img=#{headImg},tel=#{tel},
+		team=#{team},isTeamLeader=#{isTeamLeader},employee_details=#{employeeDetails},
+		email=#{email},inputTime=#{inputTime},state=#{state},department=#{department.id}
+		where id = #{id}
+	</update>
+
+
+	<!-- 添加两个方法 -->
+	<!-- 查询总数 -->
+	<select id="getCountByQuery" parameterType="EmployeeQuery"
+		resultType="int">
+		select count(*) from t_employee e
+		<include refid="EmployeeWhere" />
+	</select>
+
+
+
+
+	<!-- 查询数据 -->
+	<select id="getDataByQuery" parameterType="EmployeeQuery"
+		resultMap="EmployeeMap">
+		<!-- select * from t_employee limit #{start},#{rows} -->
+
+		SELECT
+		e.id,
+		e.username,
+		e.realname,
+		e.head_img,
+		e.password,
+		e.tel,
+		e.email,
+		e.inputTime,
+		e.state,
+		e.department,
+		e.team,
+		e.company_id,
+		e.isTeamLeader,
+		e.employee_details,
+		d.id did,
+		d.`name` dname
+		FROM
+		t_employee e
+		LEFT JOIN t_department d ON e.department = d.id
+		LEFT JOIN t_systemDictionaryItem company ON e.company_id = company.id
+		<include refid="EmployeeWhere" />
+		ORDER BY e.id
+		limit #{start},#{rows}
+
+	</select>
+	<!-- where条件的sql语句 -->
+	<sql id="EmployeeWhere">
+		<where>
+			<if test="q != null and q !=''">
+				and (e.username like concat('%',#{q},'%') or e.realname
+				like concat('%',#{q},'%'))
+			</if>
+
+			<if test="state!=-2 and state!=null">
+				and e.state = #{state}
+			</if>
+
+			<if test="beginTime!=null and beginTime!=''">
+				and e.inputTime>=#{beginTime}
+			</if>
+
+			<if test="endTime!=null and endTime!=''">
+				and not e.inputTime > #{endTime}
+			</if>
+
+			<if test="departmentId!=null">
+				and e.department.id=#{departmentId}
+			</if>
+		</where>
+	</sql>
+
+
+
+	<resultMap type="Employee" id="EmployeeMap">
+		<id column="id" property="id" />
+		<result column="username" property="username" />
+		<result column="realname" property="realname" />
+		<result column="head_img" property="headImg" />
+		<result column="password" property="password" />
+		<result column="tel" property="tel" />
+		<result column="email" property="email" />
+		<result column="inputTime" property="inputTime" />
+		<result column="employee_details" property="employeeDetails" />
+		<result column="state" property="state" />
+		<result column="team" property="team" jdbcType="BIGINT" />
+		<result column="isTeamLeader"  property="isTeamLeader" jdbcType="BIGINT" />
+		<association property="department" javaType="Department">
+			<id column="did" property="id" />
+			<result column="dname" property="name" />
+		</association>
+		<association property="company" javaType="TSystemDictionaryItem">
+			<result column="companyName" property="name" />
+		</association>
+		<!-- 根据emp id 查询到所有角色 -->
+		<collection property="Employees" javaType="arrayList" ofType="Role"
+			select="com.dajuece.mapper.RoleMapper.employeeId_role" column="id">
+		</collection>
+
+	</resultMap>
+
+	<select id="leave" parameterType="long">
+		update t_employee set state =
+		-1 where id=#{id}
+	</select>
+
+
+	<!--removeEmployee_Roles 通过empid 删除中间表数据 -->
+	<delete id="removeEmployee_Roles" parameterType="long">
+		DELETE
+		FROM
+		t_employee_role
+		WHERE
+		employee_id = #{id}
+	</delete>
+
+
+	<!-- 根据operating_record_id 查询客服 -->
+	<select id="employeeId_Complain" parameterType="long" resultType="Employee">
+		SELECT DISTINCT
+		e.*
+		FROM
+		t_customer_complain_employee t
+		LEFT JOIN t_employee e ON t.employee_id = e.id
+		WHERE
+		t.customer_complain_id = #{id};
+	</select>
+
+	<!-- 根据operating_record_id 查询客服 -->
+	<select id="employeeId_Customer" parameterType="long" resultType="Employee">
+		SELECT DISTINCT
+		e.*
+		FROM
+		t_customer_employee t
+		LEFT JOIN t_employee e ON t.employee_id = e.id
+		WHERE
+		t.customer_id = #{id};
+	</select>
+
+	<!-- 根据operating_record_id 查询客服 -->
+	<select id="employeeId_Record" parameterType="long" resultType="Employee">
+		SELECT DISTINCT
+		e.*
+		FROM
+		t_operating_record_employee t
+		LEFT JOIN t_employee e ON t.employee_id = e.id
+		WHERE
+		t.operating_record_id = #{id};
+	</select>
+
+	<!--saveEmployee_Roles 保存emp_role中间表数据 -->
+	<insert id="saveEmployee_Roles" parameterType="list">
+		insert into t_employee_role(employee_id,role_id)
+		values
+		<foreach item="item" index="index" collection="list"
+			separator=",">
+			(#{item.employeeId},#{item.roleId})
+		</foreach>
+	</insert>
+	
+	
+		<!-- 根据用户名查询整个用户 -->
+	<select id="getEmployeeByUsername" parameterType="string" resultType="Employee"> 
+		select  * from t_employee where username=#{username}
+	</select>
+
+</mapper>
+
+
+
+

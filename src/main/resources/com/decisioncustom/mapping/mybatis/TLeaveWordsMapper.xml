@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TLeaveWordsMapper">
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TLeaveWords">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="customer_id" jdbcType="BIGINT" property="customerId" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="leave_text" jdbcType="VARCHAR" property="leaveText" />
+    <result column="leave_date" jdbcType="TIMESTAMP" property="leaveDate" />
+    <result column="state" jdbcType="BIGINT" property="state" />
+    <result column="audit_id" jdbcType="BIGINT" property="auditId" />
+    <result column="audit_time" jdbcType="TIMESTAMP" property="auditTime" />
+    <result column="audit_remark" jdbcType="VARCHAR" property="auditRemark" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="teacher">
+      <id column="employeeId" property="id" />
+      <result column="employeeName" property="userName" />
+      <result column="realName" property="realName" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TCustomer" property="customer">
+      <result column="realName" property="realName" />
+      <result column="wx_head_img" jdbcType="VARCHAR" property="wxHeadImg" />
+    </association>
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    l.id, l.customer_id, l.teacher_id, l.leave_text, l.leave_date, l.state, l.audit_id, l.audit_time,
+    l.audit_remark
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_leave_words l
+    where l.id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectByCustomerId" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select c.real_name realName,c.wx_head_img,
+    <include refid="Base_Column_List" />
+    from t_leave_words l
+    LEFT JOIN t_customer c ON  c.id = l.customer_id
+    where l.customer_id = #{customerId,jdbcType=BIGINT}
+    and l.state = 0 OR  l.state= 3 or l.state= 4 OR l.state=5
+    order by l.leave_date
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_leave_words l
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_leave_words
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TLeaveWords">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_leave_words (customer_id, teacher_id, leave_text,
+    leave_date, state, audit_id,
+    audit_time, audit_remark)
+    values (#{customerId,jdbcType=BIGINT}, #{teacherId,jdbcType=BIGINT}, #{leaveText,jdbcType=VARCHAR},
+    #{leaveDate,jdbcType=TIMESTAMP}, #{state,jdbcType=BIGINT}, #{auditId,jdbcType=BIGINT},
+    #{auditTime,jdbcType=TIMESTAMP}, #{auditRemark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TLeaveWords">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_leave_words
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="customerId != null">
+        customer_id,
+      </if>
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="leaveText != null">
+        leave_text,
+      </if>
+      <if test="leaveDate != null">
+        leave_date,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="auditId != null">
+        audit_id,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="auditRemark != null">
+        audit_remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="customerId != null">
+        #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="leaveText != null">
+        #{leaveText,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveDate != null">
+        #{leaveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=BIGINT},
+      </if>
+      <if test="auditId != null">
+        #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditRemark != null">
+        #{auditRemark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TLeaveWords">
+    update t_leave_words
+    <set>
+      <if test="customerId != null">
+        customer_id = #{customerId,jdbcType=BIGINT},
+      </if>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="leaveText != null">
+        leave_text = #{leaveText,jdbcType=VARCHAR},
+      </if>
+      <if test="leaveDate != null">
+        leave_date = #{leaveDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=BIGINT},
+      </if>
+      <if test="auditId != null">
+        audit_id = #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditRemark != null">
+        audit_remark = #{auditRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TLeaveWords">
+    update t_leave_words
+    set customer_id = #{customerId,jdbcType=BIGINT},
+      teacher_id = #{teacherId,jdbcType=BIGINT},
+      leave_text = #{leaveText,jdbcType=VARCHAR},
+      leave_date = #{leaveDate,jdbcType=TIMESTAMP},
+      state = #{state,jdbcType=BIGINT},
+      audit_id = #{auditId,jdbcType=BIGINT},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      audit_remark = #{auditRemark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <sql id="employee">
+    e.user_name employeeName,e.id  employeeId,e.real_name realName
+  </sql>
+  <sql id="whereSql">
+    <where>
+      <if test="q!=null and q!=''">
+        and  leave_text like concat('%',#{q},'%')
+      </if>
+      <if test="teacherName!=null and teacherName!=''">
+        and  e.real_name like concat('%',#{teacherName},'%')
+      </if>
+      <if test="userName!=null and userName!=''">
+        and  t_leave_words.user_name like concat('%',#{userName},'%')
+      </if>
+      <if test="teacherId!=null and teacherId!=''">
+        and teacher_id = #{teacherId}
+      </if>
+      <if test="startTime!=null and startTime!=''">
+        and leave_date&gt;=#{startTime}
+      </if>
+      <if test="endTime!=null and endTime!=''">
+        and not leave_date &gt; #{endTime}
+      </if>
+      <if test="state!=null || state==null">
+        and state == 0 OR  state== 3 or state== 4 OR state==5
+      </if>
+    </where>
+  </sql>
+
+
+  <select id="getAllLeaveWordsByQuery" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="employee" />
+    from t_leave_words
+    LEFT JOIN t_employee e ON t_leave_words.teacher_id = e.id
+    <include refid="whereSql" />
+    order by leave_date
+  </select>
+</mapper>

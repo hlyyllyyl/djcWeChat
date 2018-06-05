@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TArticleMapper">
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_article
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TArticle">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_article (teacher_id, title, title_img, 
+      tag_id, source, creation_time, 
+      update_time, thumb_up_quantity, reading_quantity, 
+      top, parent_id, column_id, 
+      article_intro, url, url_title, 
+      voice_title, voice_path, audit_id, 
+      audit_time, audit_remark, stocks, 
+      state, article_intro_details)
+    values (#{teacherId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{titleImg,jdbcType=VARCHAR}, 
+      #{tagId,jdbcType=BIGINT}, #{source,jdbcType=VARCHAR}, #{creationTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{thumbUpQuantity,jdbcType=BIGINT}, #{readingQuantity,jdbcType=BIGINT}, 
+      #{top,jdbcType=INTEGER}, #{parentId,jdbcType=BIGINT}, #{columnId,jdbcType=BIGINT}, 
+      #{articleIntro,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{urlTitle,jdbcType=VARCHAR}, 
+      #{voiceTitle,jdbcType=VARCHAR}, #{voicePath,jdbcType=VARCHAR}, #{auditId,jdbcType=BIGINT}, 
+      #{auditTime,jdbcType=TIMESTAMP}, #{auditRemark,jdbcType=VARCHAR}, #{stocks,jdbcType=VARCHAR}, 
+      #{state,jdbcType=INTEGER}, #{articleIntroDetails,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TArticle">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_article
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="titleImg != null">
+        title_img,
+      </if>
+      <if test="tagId != null">
+        tag_id,
+      </if>
+      <if test="source != null">
+        source,
+      </if>
+      <if test="creationTime != null">
+        creation_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="thumbUpQuantity != null">
+        thumb_up_quantity,
+      </if>
+      <if test="readingQuantity != null">
+        reading_quantity,
+      </if>
+      <if test="top != null">
+        top,
+      </if>
+      <if test="parentId != null">
+        parent_id,
+      </if>
+      <if test="columnId != null">
+        column_id,
+      </if>
+      <if test="articleIntro != null">
+        article_intro,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="urlTitle != null">
+        url_title,
+      </if>
+      <if test="voiceTitle != null">
+        voice_title,
+      </if>
+      <if test="voicePath != null">
+        voice_path,
+      </if>
+      <if test="auditId != null">
+        audit_id,
+      </if>
+      <if test="auditTime != null">
+        audit_time,
+      </if>
+      <if test="auditRemark != null">
+        audit_remark,
+      </if>
+      <if test="stocks != null">
+        stocks,
+      </if>
+      <if test="state != null">
+        state,
+      </if>
+      <if test="articleIntroDetails != null">
+        article_intro_details,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="titleImg != null">
+        #{titleImg,jdbcType=VARCHAR},
+      </if>
+      <if test="tagId != null">
+        #{tagId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="thumbUpQuantity != null">
+        #{thumbUpQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="readingQuantity != null">
+        #{readingQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        #{top,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="columnId != null">
+        #{columnId,jdbcType=BIGINT},
+      </if>
+      <if test="articleIntro != null">
+        #{articleIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="urlTitle != null">
+        #{urlTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="voiceTitle != null">
+        #{voiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="voicePath != null">
+        #{voicePath,jdbcType=VARCHAR},
+      </if>
+      <if test="auditId != null">
+        #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="auditTime != null">
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditRemark != null">
+        #{auditRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="stocks != null">
+        #{stocks,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=INTEGER},
+      </if>
+      <if test="articleIntroDetails != null">
+        #{articleIntroDetails,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TArticle">
+    update t_article
+    <set>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="titleImg != null">
+        title_img = #{titleImg,jdbcType=VARCHAR},
+      </if>
+      <if test="tagId != null">
+        tag_id = #{tagId,jdbcType=BIGINT},
+      </if>
+      <if test="source != null">
+        source = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="thumbUpQuantity != null">
+        thumb_up_quantity = #{thumbUpQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="readingQuantity != null">
+        reading_quantity = #{readingQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        top = #{top,jdbcType=INTEGER},
+      </if>
+      <if test="parentId != null">
+        parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="columnId != null">
+        column_id = #{columnId,jdbcType=BIGINT},
+      </if>
+      <if test="articleIntro != null">
+        article_intro = #{articleIntro,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="urlTitle != null">
+        url_title = #{urlTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="voiceTitle != null">
+        voice_title = #{voiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="voicePath != null">
+        voice_path = #{voicePath,jdbcType=VARCHAR},
+      </if>
+      <if test="auditId != null">
+        audit_id = #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="auditTime != null">
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditRemark != null">
+        audit_remark = #{auditRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="stocks != null">
+        stocks = #{stocks,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        state = #{state,jdbcType=INTEGER},
+      </if>
+      <if test="articleIntroDetails != null">
+        article_intro_details = #{articleIntroDetails,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TArticle">
+    update t_article
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      title_img = #{titleImg,jdbcType=VARCHAR},
+      tag_id = #{tagId,jdbcType=BIGINT},
+      source = #{source,jdbcType=VARCHAR},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      thumb_up_quantity = #{thumbUpQuantity,jdbcType=BIGINT},
+      reading_quantity = #{readingQuantity,jdbcType=BIGINT},
+      top = #{top,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=BIGINT},
+      column_id = #{columnId,jdbcType=BIGINT},
+      article_intro = #{articleIntro,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      url_title = #{urlTitle,jdbcType=VARCHAR},
+      voice_title = #{voiceTitle,jdbcType=VARCHAR},
+      voice_path = #{voicePath,jdbcType=VARCHAR},
+      audit_id = #{auditId,jdbcType=BIGINT},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      audit_remark = #{auditRemark,jdbcType=VARCHAR},
+      stocks = #{stocks,jdbcType=VARCHAR},
+      state = #{state,jdbcType=INTEGER},
+      article_intro_details = #{articleIntroDetails,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select t.name tagName,
+    <include refid="Base_Column_List" />
+    from t_article a
+    LEFT JOIN t_system_dictionary_item t on t.id = a.tag_id
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+
+
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TArticle">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="title_img" jdbcType="VARCHAR" property="titleImg" />
+    <result column="tag_id" jdbcType="BIGINT" property="tagId" />
+    <result column="source" jdbcType="VARCHAR" property="source" typeHandler="com.decisioncustom.utils.myBatis.EmptyStringIfNull" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    <result column="thumb_up_quantity" jdbcType="BIGINT" property="thumbUpQuantity" />
+    <result column="reading_quantity" jdbcType="BIGINT" property="readingQuantity"  />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="column_id" jdbcType="BIGINT" property="columnId" />
+    <result column="article_intro" jdbcType="VARCHAR" property="articleIntro" typeHandler="com.decisioncustom.utils.myBatis.EmptyStringIfNull" />
+    <result column="url" jdbcType="VARCHAR" property="url" typeHandler="com.decisioncustom.utils.myBatis.EmptyStringIfNull" />
+    <result column="url_title" jdbcType="VARCHAR" property="urlTitle" typeHandler="com.decisioncustom.utils.myBatis.EmptyStringIfNull" />
+    <result column="voice_title" jdbcType="VARCHAR" property="voiceTitle" />
+    <result column="voice_path" jdbcType="VARCHAR" property="voicePath"   />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="article_intro_details" jdbcType="LONGVARCHAR" property="articleIntroDetails" typeHandler="com.decisioncustom.utils.myBatis.EmptyStringIfNull" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="employee">
+      <result column="teacherName" property="realName" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TColumn" property="column">
+      <result column="cName" property="name" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="systemDictionaryItem">
+      <result column="tagName" property="name" />
+    </association>
+    <collection javaType="arrayList" ofType="com.decisioncustom.domain.TArticle" property="children">
+      <result column="bTitle" jdbcType="VARCHAR" property="title" />
+      <result column="bTitleImg" jdbcType="VARCHAR" property="titleImg" />
+      <result column="bId" property="id" />
+      <result column="bSource" property="source" />
+      <result column="bCreationTime" property="creationTime" />
+      <result column="bUpdateTime" property="updateTime" />
+      <result column="bThumbUpQuantity" property="thumbUpQuantity" />
+      <result column="bAuditRemark" property="auditRemark" />
+      <result column="bThumbUpQuantity" property="thumbUpQuantity" />
+      <result column="bReadingQuantity" property="readingQuantity" />
+      <result column="bState" property="state" />
+      <result column="bArticleIntro" property="articleIntro" />
+    </collection>
+  </resultMap>
+
+  <resultMap id="getArticleByQueryMap" type="com.decisioncustom.domain.vo.ArticleVO">
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="title_img" jdbcType="VARCHAR" property="titleImg" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="thumb_up_quantity" jdbcType="BIGINT" property="thumbUpQuantity" />
+    <result column="reading_quantity" jdbcType="BIGINT" property="readingQuantity"  />
+    <result column="article_intro" jdbcType="VARCHAR" property="articleIntro" typeHandler="com.decisioncustom.utils.myBatis.EmptyStringIfNull" />
+    <collection javaType="arrayList" ofType="com.decisioncustom.domain.vo.ArticleVO" property="children">
+      <result column="bTitle" jdbcType="VARCHAR" property="title" />
+      <result column="bTitleImg" jdbcType="VARCHAR" property="titleImg" />
+      <result column="bCreationTime" property="creationTime" />
+      <result column="bThumbUpQuantity" property="thumbUpQuantity" />
+      <result column="bReadingQuantity" property="readingQuantity" />
+      <result column="bArticleIntro" property="articleIntro" />
+    </collection>
+  </resultMap>
+
+  <resultMap id="ArticleMap" type="com.decisioncustom.domain.TArticle">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="title_img" jdbcType="VARCHAR" property="titleImg" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="tag_id" jdbcType="BIGINT" property="tagId" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="thumb_up_quantity" jdbcType="BIGINT" property="thumbUpQuantity" />
+    <result column="reading_quantity" jdbcType="BIGINT" property="readingQuantity" />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="column_id" jdbcType="BIGINT" property="columnId" />
+    <result column="article_intro" jdbcType="VARCHAR" property="articleIntro" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="url_title" jdbcType="VARCHAR" property="urlTitle" />
+    <result column="voice_title" jdbcType="VARCHAR" property="voiceTitle" />
+    <result column="voice_path" jdbcType="VARCHAR" property="voicePath" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+    <result column="article_intro_details" jdbcType="LONGVARCHAR" property="articleIntroDetails" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="employee">
+      <result column="teacherName" property="realName" />
+      <result column="headImg" property="headImg" />
+      <result column="employeeDetails" property="employeeDetails" />
+      <result column="tReadingQuantity" property="readingQuantity" />
+      <result column="tThumbUpQuantity" property="thumbUpQuantity" />
+      <result column="tPracticeNum" property="practiceNum" />
+      <result column="disclaimer" property="disclaimer" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TSystemDictionaryItem" property="systemDictionaryItem">
+      <result column="tagName" property="name" />
+    </association>
+    <association javaType="com.decisioncustom.domain.TColumn" property="column">
+      <result column="cName" property="name" />
+      <result column="nameRemark" property="nameRemark" />
+    </association>
+  </resultMap>
+
+  <resultMap id="nextArticleMap" type="com.decisioncustom.domain.TArticle">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="title_img" jdbcType="VARCHAR" property="titleImg" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="column_id" jdbcType="BIGINT" property="columnId" />
+    <result column="article_intro" jdbcType="VARCHAR" property="articleIntro" />
+    <result column="state" jdbcType="INTEGER" property="state" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    a.id, a.teacher_id, a.title, a.title_img, a.source, a.creation_time, a.update_time, a.thumb_up_quantity, a.article_intro,
+    a.reading_quantity, a.top, a.column_id, a.state, a.url, a.url_title, a.voice_path, a.voice_title, a.article_intro_details,a.tag_id
+  </sql>
+
+  <sql id="special_article_List">
+    b.id bId, b.title bTitle, b.title_img bTitleImg, b.source bSource,b.creation_time bCreationTime,
+    b.update_time bUpdateTime, b.thumb_up_quantity bThumbUpQuantity,b.audit_remark bAuditRemark,
+    b.reading_quantity bReadingQuantity, b.state bState,b.article_intro  bArticleIntro
+  </sql>
+
+  <sql id="Teacher_Column_List">
+   t.head_img headImg,t.real_name teacherName,t.employee_details employeeDetails,
+   t.reading_quantity tReadingQuantity,t.thumb_up_quantity tThumbUpQuantity,t.practice_num tPracticeNum,t.disclaimer
+  </sql>
+
+  <sql id="NextSql">
+    <where>
+      <if test="q!=null">
+        and (a.title  like concat('%',#{q},'%')
+        OR t.real_name like concat('%',#{q},'%'))
+      </if>
+      <if test="creationTime!=null">
+        and a.creation_time &gt; #{creationTime}
+      </if>
+      <if test="top!=null">
+        and a.top= #{top}
+      </if>
+      <if test="columnId!=null">
+        and a.column_id= #{columnId}
+      </if>
+      <if test="top==null">
+        and a.top = 0
+      </if>
+      <if test="state==null">
+        and a.state= 0
+      </if>
+      <if test="upId!=null">
+        and  a.id &gt; #{upId}  ORDER by a.id
+      </if>
+      <if test="nextId!=null">
+        and not a.id &gt;= #{nextId} ORDER by a.id  DESC
+      </if>
+
+    </where>
+  </sql>
+
+  <sql id="ByQuery">
+    <where>
+
+      <if test="creationTime!=null">
+        and a.creation_time &gt; #{creationTime}
+      </if>
+      <if test="top!=null">
+        and a.top = #{top}
+      </if>
+      <if test="parentId==0">
+        and a.parent_id is  NULL
+      </if>
+      <if test="columnId!=null">
+        and a.column_id= #{columnId}
+      </if>
+      <if test="state==null">
+        and a.state= 0
+      </if>
+      <if test="q!=null">
+        and (a.title  like concat('%',#{q},'%')
+        OR t.real_name like concat('%',#{q},'%')
+        OR s.name like concat('%',#{q},'%'))
+      </if>
+    </where>
+  </sql>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select t.real_name teacherName,c.name cName,
+    <include refid="Base_Column_List" />
+    from t_article a
+    LEFT JOIN t_employee t ON a.teacher_id = t.id
+    LEFT JOIN t_column  c ON a.column_id = c.id
+    ORDER by a.top DESC, a.id Desc
+  </select>
+
+  <select id="getArticleByQuery" parameterType="com.decisioncustom.query.ArticleQuery" resultMap="BaseResultMap">
+    select  s.name tagName,
+    <include refid="special_article_List" />,
+    <include refid="Base_Column_List" />
+    from t_article a
+    LEFT JOIN t_employee t ON a.teacher_id = t.id
+    LEFT JOIN t_article b on b.parent_id = a.id
+    LEFT JOIN t_system_dictionary_item s on s.id = a.tag_id
+    <include refid="ByQuery" />
+    ORDER by a.top DESC, a.id Desc
+  </select>
+
+  <!--根据条件查询文章-->
+  <select id="getNextByQuery" parameterType="com.decisioncustom.query.ArticleQuery" resultMap="BaseResultMap">
+    select t.real_name teacherName,
+    <include refid="Base_Column_List" />
+    from t_article a
+    LEFT JOIN t_employee t ON a.teacher_id = t.id
+    <include refid="NextSql" />
+    LIMIT 1
+  </select>
+
+  <!--根据栏目查询文章-->
+  <select id="getArticleByColumn" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_article a
+    where a.column_id = #{columnId,jdbcType=BIGINT} AND a.state=0
+    ORDER by a.top DESC, a.id Desc
+  </select>
+
+  <!--根据文章ID查询文章-->
+  <select id="getArticleById" parameterType="java.lang.Long" resultMap="ArticleMap">
+    select c.name cName,c.name_remark nameRemark,s.name tagName,
+    <include refid="Base_Column_List" />,
+    <include refid="Teacher_Column_List" />
+    from t_article a
+    LEFT JOIN t_employee t ON a.teacher_id = t.id
+    LEFT JOIN t_column  c ON a.column_id = c.id
+    LEFT JOIN t_system_dictionary_item s on s.id = a.tag_id
+    where a.id = #{id,jdbcType=BIGINT}
+  </select>
+
+</mapper>

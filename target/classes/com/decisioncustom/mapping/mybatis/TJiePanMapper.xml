@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.decisioncustom.mapper.TJiePanMapper" >
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TJiePan" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="teacher_id" property="teacherId" jdbcType="BIGINT" />
+    <result column="text" property="text" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="top" property="top" jdbcType="INTEGER" />
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="adviser">
+      <id column="employeeId" property="id" />
+      <result column="employeeName" property="userName" />
+      <result column="realName" property="realName" />
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    t_jie_pan.id, teacher_id, text, date, top
+  </sql>
+  <sql id="employee">
+    e.user_name employeeName,e.id  employeeId,e.real_name realName
+  </sql>
+  <sql id="whereSql">
+    <where>
+      <if test="q!=null and q!=''">
+        and  text like concat('%',#{q},'%')
+      </if>
+      <if test="teacherName!=null and teacherName!=''">
+        and  e.real_name like concat('%',#{teacherName},'%')
+      </if>
+      <if test="startTime!=null and startTime!=''">
+        and date>=#{startTime}
+      </if>
+      <if test="endTime!=null and endTime!=''">
+        and not date >= #{endTime}
+      </if>
+    </where>
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_jie_pan
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="employee" />
+    from t_jie_pan
+    LEFT JOIN t_employee e ON t_jie_pan.teacher_id = e.id
+  </select>
+  <select id="selectByQuery" resultMap="BaseResultMap" parameterType="com.decisioncustom.query.JiePanQuery">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="employee" />
+    from t_jie_pan
+    LEFT JOIN t_employee e ON t_jie_pan.teacher_id = e.id
+    <include refid="whereSql" />
+    order by date DESC
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_jie_pan
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TJiePan" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_jie_pan (teacher_id, text, date, 
+      top)
+    values (#{teacherId,jdbcType=BIGINT}, #{text,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
+      #{top,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TJiePan" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_jie_pan
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="teacherId != null" >
+        teacher_id,
+      </if>
+      <if test="text != null" >
+        text,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="top != null" >
+        top,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="teacherId != null" >
+        #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="text != null" >
+        #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="top != null" >
+        #{top,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TJiePan" >
+    update t_jie_pan
+    <set >
+      <if test="teacherId != null" >
+        teacher_id = #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="text != null" >
+        text = #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="top != null" >
+        top = #{top,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TJiePan" >
+    update t_jie_pan
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      text = #{text,jdbcType=VARCHAR},
+      date = #{date,jdbcType=TIMESTAMP},
+      top = #{top,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

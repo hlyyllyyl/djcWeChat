@@ -1,0 +1,53 @@
+body{
+    background: #f4f4f4;
+}
+.con .logo img{
+    height:67px;
+    width:83px;
+    
+}
+.logo {
+    text-align: center;
+    padding: 33px 0 10px 0;
+}
+.title_1{
+    color:#222222;
+    font-size:14px;
+    text-align: center;
+}
+.body_1{
+    height:300px;
+    margin: 15px;
+    background:#fff;
+}
+.zt_1{
+    height:47px;
+    color:#222222;
+    font-size:20px;
+    text-align: center;  
+   
+}
+.zt_2{
+    color:#222222;
+    font-size:14px;
+    padding:0 20px 0; 
+}
+.p_top{
+    padding-top:10px;
+}
+.weim2{
+    margin-top:30px;
+}
+.weim2 img{
+    width: 100px;
+    height:100px;
+    margin-left: 20px;
+    float: left;
+}
+.weim2 .right_1{
+    float: left;
+    margin-top:20px;
+}
+.right_1 p{
+    color:#222222;
+}

@@ -1,0 +1,13 @@
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 80px;
+}
+.bootstrap-select>.dropdown-toggle {
+    width: 100%;
+    padding-right: 25px;
+    z-index: 1;
+    height: 28px;
+    margin-top: 10px;
+}
+#totalRow td{
+    color: red;
+}

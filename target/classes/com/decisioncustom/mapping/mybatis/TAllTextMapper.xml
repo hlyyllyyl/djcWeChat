@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.decisioncustom.mapper.TAllTextMapper">
+  <resultMap id="BaseResultMap" type="com.decisioncustom.domain.TAllText">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="teacher_id" jdbcType="BIGINT" property="teacherId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="creation_time" jdbcType="TIMESTAMP" property="creationTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="small_img" jdbcType="VARCHAR" property="smallImg" />
+    <result column="img" jdbcType="VARCHAR" property="img" />
+    <result column="reading_quantity" jdbcType="BIGINT" property="readingQuantity" />
+    <result column="top" jdbcType="INTEGER" property="top" />
+    <result column="original" jdbcType="INTEGER" property="original" />
+    <result column="text_id" jdbcType="BIGINT" property="textId" />
+    <result column="text_type_id" jdbcType="BIGINT" property="textTypeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    t_all_text.id, teacher_id, title, creation_time, update_time, small_img, img, reading_quantity,
+    top, original, text_id, text_type_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_all_text
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_all_text
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.decisioncustom.domain.TAllText">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_all_text (teacher_id, title, creation_time, 
+      update_time, small_img, img, 
+      reading_quantity, top, original, 
+      text_id, text_type_id)
+    values (#{teacherId,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{creationTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{smallImg,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, 
+      #{readingQuantity,jdbcType=BIGINT}, #{top,jdbcType=INTEGER}, #{original,jdbcType=INTEGER}, 
+      #{textId,jdbcType=BIGINT}, #{textTypeId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.decisioncustom.domain.TAllText">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_all_text
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        teacher_id,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="creationTime != null">
+        creation_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="smallImg != null">
+        small_img,
+      </if>
+      <if test="img != null">
+        img,
+      </if>
+      <if test="readingQuantity != null">
+        reading_quantity,
+      </if>
+      <if test="top != null">
+        top,
+      </if>
+      <if test="original != null">
+        original,
+      </if>
+      <if test="textId != null">
+        text_id,
+      </if>
+      <if test="textTypeId != null">
+        text_type_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="teacherId != null">
+        #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smallImg != null">
+        #{smallImg,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null">
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="readingQuantity != null">
+        #{readingQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        #{top,jdbcType=INTEGER},
+      </if>
+      <if test="original != null">
+        #{original,jdbcType=INTEGER},
+      </if>
+      <if test="textId != null">
+        #{textId,jdbcType=BIGINT},
+      </if>
+      <if test="textTypeId != null">
+        #{textTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.decisioncustom.domain.TAllText">
+    update t_all_text
+    <set>
+      <if test="teacherId != null">
+        teacher_id = #{teacherId,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="creationTime != null">
+        creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="smallImg != null">
+        small_img = #{smallImg,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null">
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="readingQuantity != null">
+        reading_quantity = #{readingQuantity,jdbcType=BIGINT},
+      </if>
+      <if test="top != null">
+        top = #{top,jdbcType=INTEGER},
+      </if>
+      <if test="original != null">
+        original = #{original,jdbcType=INTEGER},
+      </if>
+      <if test="textId != null">
+        text_id = #{textId,jdbcType=BIGINT},
+      </if>
+      <if test="textTypeId != null">
+        text_type_id = #{textTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.decisioncustom.domain.TAllText">
+    update t_all_text
+    set teacher_id = #{teacherId,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      creation_time = #{creationTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      small_img = #{smallImg,jdbcType=VARCHAR},
+      img = #{img,jdbcType=VARCHAR},
+      reading_quantity = #{readingQuantity,jdbcType=BIGINT},
+      top = #{top,jdbcType=INTEGER},
+      original = #{original,jdbcType=INTEGER},
+      text_id = #{textId,jdbcType=BIGINT},
+      text_type_id = #{textTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap extends="BaseResultMap" id="employeeMap" type="com.decisioncustom.domain.TAllText">
+    <!--关联属性-->
+    <association javaType="com.decisioncustom.domain.TEmployee" property="employee">
+      <id column="employeeId" property="id" />
+      <result column="employeeName" property="userName" />
+      <result column="realName" property="realName" />
+    </association>
+  </resultMap>
+  <sql id="employee">
+    e.user_name employeeName,e.id  employeeId,e.real_name realName
+  </sql>
+  <sql id="whereSql">
+    <where>
+      <if test="title!=null and title!=''">
+        and  title like concat('%',#{title},'%')
+      </if>
+      <if test="teacherName!=null and teacherName!=''">
+        and  e.real_name like concat('%',#{teacherName},'%')
+      </if>
+      <if test="textTypeId!=null and textTypeId!=''">
+        and  text_type_id = #{textTypeId}
+      </if>
+      <if test="original==0">
+        and    original=0
+      </if>
+      <if test="original==1">
+        and    original=1
+      </if>
+      <if test="top==0">
+        and    top=0
+      </if>
+      <if test="top==1">
+        and    top=1
+      </if>
+        <if test="startTime!=null and startTime!=''">
+            and update_time>=#{startTime}
+        </if>
+        <if test="endTime!=null and endTime!=''">
+            and not update_time > #{endTime}
+        </if>
+    </where>
+  </sql>
+  <select id="getAllTextById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_all_text
+    where text_id = #{textId,jdbcType=BIGINT}
+  </select>
+  <!--根据文章类型查文章-->
+  <select id="getAllTextText" parameterType="com.decisioncustom.query.TextQuery" resultMap="employeeMap">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="employee" />
+    from t_all_text
+    LEFT JOIN t_employee e ON t_all_text.teacher_id = e.id
+    <include refid="whereSql" />
+    order BY update_time DESC
+  </select>
+  <!--根据文章ID删除-->
+  <delete id="deleteByTextId" parameterType="java.lang.Long">
+    delete from t_all_text
+    where text_id = #{textId,jdbcType=BIGINT}
+  </delete>
+</mapper>

@@ -1,0 +1,132 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+    margin:0;
+    padding:0;
+     font-family: 微软雅黑;
+}
+a {
+  text-decoration: none;
+}
+ul,ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {vert-align: top;}/*  移动端图片边框   相当于  border:0 */
+a,
+input,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+input,
+button {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+body {
+  margin: 0;
+  -webkit-user-select: none;
+}
+
+body * {
+  -webkit-user-select: none;
+  font-family: Helvetica;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+  
+}
+/***********************/
+.list-top{
+    height:44px;
+    margin-bottom: 20px;
+  
+}
+.conter{
+    width:100%;
+    text-align: center;
+    
+}
+.logo{
+    text-align: center;
+    height:100px;  
+}
+.logo img{
+    width:70%;
+}
+.land-txt{
+    font-size: 30px;
+    margin: 0 auto;
+    font-weight: bold;
+    padding: 10px;
+    width: 100px;
+    border-bottom: 3px solid sandybrown;
+    color: sandybrown;
+    margin-bottom: 10px;
+}
+.form1{
+  margin-top: 200px;
+}
+.min-img{
+  display:inline-block;
+  height: 40px;
+  width: 40px;
+  float:left;
+}
+.min-img img{
+  line-height: 50px;
+  margin-top: 5px;
+}
+.inpts{
+    outline: 0;
+    background: #EEEEEE;
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 60px;
+    font-size: 0px;
+    letter-spacing: 1px;   
+    border-radius:10px;
+    margin-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+}
+.in{
+  display:inline-block;
+  height: 10px;
+  float:left;
+}
+.inpt{
+  line-height: 30px;
+  color: #999;
+  border: 0;
+
+}
+.btnn{
+    display: inline-block;
+    height: 50px;
+    background: sandybrown;
+    border-radius:10px;
+    color:#fff;
+    text-align: center; 
+    width: 80%;
+    font-size: 20px;
+  }
+  @media screen and (max-width: 450px) {
+    .logo{
+      text-align: center;
+      height:120px;  
+  }
+  .land-txt{
+    font-size: 30px;
+    margin: 0 auto;
+    font-weight: bold;
+    padding: 10px;
+    width: 200px;
+    border-bottom: 3px solid sandybrown;
+    color: sandybrown;
+    margin-bottom: 10px;
+  }
+  .form1{
+    margin-top: 0px;
+  }
+}

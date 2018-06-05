@@ -1,0 +1,188 @@
+/* 
+2018.6.1 
+*/
+#wrapper {
+    position:absolute; z-index:1;
+    top:140px;
+    bottom:48px;
+    left:0;
+    width:100%;
+    overflow:auto;
+    height:100%;
+  }
+  #scroller {
+      position:relative;
+      -webkit-touch-callout:none;
+      -webkit-tap-highlight-color:rgba(0,0,0,0);
+      min-height: 101%;
+      float:left;
+      width:100%;
+      padding:0;
+  }
+  #pullDown, #pullUp {
+      height:40px;
+      line-height:40px;
+      width: 100px;
+      font-weight:bold;
+      font-size:14px;
+      color:#888;
+      visibility: hidden;
+  }
+   #pullDown{
+      visibility: hidden;
+     }
+
+  #pullUp{
+      height: 40px;
+  }
+  #pullDown .pullDownIcon, #pullUp .pullUpIcon {
+      display:block;
+      float:left;
+     /* background:url(/imgs/pull-icon@2x.png) 0 0 no-repeat;*/
+      -webkit-background-size:40px 80px;
+      background-size:40px 80px;
+      -webkit-transition-property:-webkit-transform;
+      -webkit-transition-duration:250ms;
+  }
+  #pullDown .pullDownIcon {
+      -webkit-transform:rotate(0deg) translateZ(0);
+  }
+  #pullUp .pullUpIcon {
+      -webkit-transform:rotate(-180deg) translateZ(0);
+  }
+  /**
+   * 闂傚倸鍊风粈渚�骞夐敓鐘茶摕闁挎繂顦粈澶愬箹濞ｎ剙濡奸柡瀣╃铻栭柨婵嗘噹閺嗘瑩鏌＄�ｂ晝绐旈柡灞剧洴椤㈡洟濡堕崨顔句簴濠电偛鐡ㄧ划搴∥涘顧�3濠电姷鏁搁崑娑㈩敋椤撶喎鍨旈悗鐢殿焾缁躲倝鏌涜椤ㄥ棝宕戞径鎰叆闁绘洖鍊圭�氾拷
+   */
+  #pullDown.flip .pullDownIcon {
+      -webkit-transform:rotate(-180deg) translateZ(0);
+  }
+  
+  #pullUp.flip .pullUpIcon {
+      -webkit-transform:rotate(0deg) translateZ(0);
+  }
+  
+  #pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+      background-position:0 100%;
+      -webkit-transform:rotate(0deg) translateZ(0);
+      -webkit-transition-duration:0ms;
+  
+      -webkit-animation-name:loading;
+      -webkit-animation-duration:2s;
+      -webkit-animation-iteration-count:infinite;
+      -webkit-animation-timing-function:linear;
+  }
+  
+  @-webkit-keyframes loading {
+      from { -webkit-transform:rotate(0deg) translateZ(0); }
+      to { -webkit-transform:rotate(360deg) translateZ(0); }
+  }
+  /*  */
+  .spinner {
+    margin: 0px auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+  }
+   
+  .container1 > div, .container2 > div, .container3 > div {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+   
+  .spinner .spinner-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+   
+  .container2 {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+  }
+   
+  .container3 {
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+  }
+   
+  .circle1 { top: 0; left: 0; }
+  .circle2 { top: 0; right: 0; }
+  .circle3 { right: 0; bottom: 0; }
+  .circle4 { left: 0; bottom: 0; }
+   
+  .container2 .circle1 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+  }
+   
+  .container3 .circle1 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+  }
+   
+  .container1 .circle2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+   
+  .container2 .circle2 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+  }
+   
+  .container3 .circle2 {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+  }
+   
+  .container1 .circle3 {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+  }
+   
+  .container2 .circle3 {
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+  }
+   
+  .container3 .circle3 {
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+  }
+   
+  .container1 .circle4 {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+  }
+   
+  .container2 .circle4 {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
+  }
+   
+  .container3 .circle4 {
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+  }
+   
+  @-webkit-keyframes bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+   
+  @keyframes bouncedelay {
+    0%, 80%, 100% {
+      transform: scale(0.0);
+      -webkit-transform: scale(0.0);
+    } 40% {
+      transform: scale(1.0);
+      -webkit-transform: scale(1.0);
+    }
+  }
